@@ -86,12 +86,14 @@ class BaseHandler(RequestHandler):
     def get_current_user(self):
         """Get current user object from database"""
         if self.session is not None:
-            try:
-                return User.by_uuid(self.session["user_uuid"])
-            except KeyError:
-                logging.exception("Malformed session: %r" % self.session)
-            except:
-                logging.exception("Failed call to get_current_user()")
+            user_uuid = self.session.get("user_uuid")  # safer than direct indexing
+            if user_uuid:
+                try:
+                    return User.by_uuid(user_uuid)
+                except Exception:
+                    logging.exception("Failed call to get_current_user() for user_uuid=%s", user_uuid)
+            else:
+                logging.debug("Session exists but no 'user_uuid': %r", self.session)
         return None
 
     def start_session(self):
@@ -352,12 +354,14 @@ class BaseWebSocketHandler(WebSocketHandler):
     def get_current_user(self):
         """Get current user object from database"""
         if self.session is not None:
-            try:
-                return User.by_handle(self.session["handle"])
-            except KeyError:
-                logging.exception("Malformed session: %r" % self.session)
-            except:
-                logging.exception("Failed call to get_current_user()")
+            handle = self.session.get("handle")  # safer than directly indexing
+            if handle:
+                try:
+                    return User.by_handle(handle)
+                except Exception:
+                    logging.exception("Failed call to get_current_user()")
+            else:
+                logging.warning("Session exists but 'handle' not set: %r" % self.session)
         return None
 
     def open(self):

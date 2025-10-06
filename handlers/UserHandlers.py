@@ -36,7 +36,7 @@ except ImportError:
 import json
 import logging
 from builtins import str
-
+import urllib.parse
 import tornado
 from tornado.options import options
 
@@ -339,17 +339,32 @@ class LogoutHandler(BaseHandler):
     """Log user out of current session"""
 
     def get(self, *args, **kwargs):
-        """Redirect"""
-        if self.session is not None:
-            self.redirect("/user")
-        else:
-            self.redirect("/login")
+        # Safely get the current user; may be None
+        user = self.get_current_user() if self.session else None
+
+        if user:
+            try:
+                EventManager.instance().deauth(user)
+            except Exception:
+                # Log any error during deauth
+                logging.exception("Failed to deauthorize user during logout: %s", user)
+
+        # Delete session if exists
+        if self.session:
+            self.session.delete()
+
+        # Clear cookies to ensure session is removed
+        self.clear_all_cookies()
+
+          # Construct the Auth0 logout URL
+        return_to_url = urllib.parse.quote(options.return_to_url)
+        client_id = options.auth0_client_id
+        auth0_domain = options.auth0_domain
+        logout_url = f"https://{auth0_domain}/v2/logout?returnTo={return_to_url}&client_id={client_id}"
+
+        # Redirect to Auth0 logout URL
+        self.redirect(logout_url)
 
     def post(self, *args, **kwargs):
-        """Clears cookies and session data"""
-        if self.session is not None:
-            user = self.get_current_user()
-            EventManager.instance().deauth(user)
-            self.session.delete()
-        self.clear_all_cookies()
-        self.redirect("/")
+        # Support logout via POST
+        self.get(*args, **kwargs)

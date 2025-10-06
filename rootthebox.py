@@ -378,6 +378,18 @@ define(
     group="server",
     help="keys to use for api access",
 )
+# Auth0 Settings
+define("auth0_domain", default="", group="auth0", help="Auth0 domain", type=str)
+
+define("auth0_client_id", default="", group="auth0", help="Auth0 client ID", type=str)
+
+define("auth0_client_secret", default="", group="auth0", help="Auth0 client secret", type=str)
+
+define("auth0_redirect_url", default="", group="auth0", help="Auth0 redirect URL", type=str)
+
+define("auth0_shared_secret", default="CHANGE_TO_A_STRONG_RANDOM_STRING", group="auth0", help="Shared secret for Auth0 validation", type=str)
+
+define("return_to_url", default="http://127.0.0.1", group="auth0" , help="URL to redirect after logout", type=str)
 
 # Mail Server
 define("mail_host", default="", group="mail", help="SMTP server")

@@ -1,0 +1,1212 @@
+body{
+    margin:0;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:14px;
+    line-height:20px;
+    color:#333;
+    background-color:#fff
+}
+
+/* =======Main navbar and page========== */
+.navbar.navbar-fixed-top {
+    background-color: #295573;
+    background-image: linear-gradient(to bottom, #4a78a0, #295573); /* subtle gloss */
+    border: 1px solid #2e4e72;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* soft shadow for depth */
+    color: #fff;
+    padding: 0.6rem 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Inner wrapper */
+.navbar .navbar-inner {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Brand */
+.navbar .brand {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    padding: 12px 25px;
+    letter-spacing: 1px;
+    border-radius: 4px; /* subtle rounding */
+    transition: color 0.2s, text-shadow 0.2s, transform 0.2s;
+}
+.navbar .brand:hover {
+    color: #f0f0f0 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
+    transform: scale(1.05); /* slight pop on hover */
+    background: none !important;
+}
+
+/* Top-level nav links */
+.navbar .nav > li > a {
+    color: #eaeaea !important;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    padding: 12px 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    background: none !important;
+    transition: color 0.2s, transform 0.2s;
+}
+.navbar .nav > li > a:hover,
+.navbar .nav > li.active > a {
+    color: #ffffff !important;
+    background: none !important;
+    text-decoration: none;
+    transform: scale(1.05); /* subtle pop effect */
+}
+
+/* Dropdown toggle button */
+.navbar .dropdown-toggle {
+    padding: 12px 28px;       /* longer rectangle */
+    min-width: 100px;
+    border-radius: 6px;       /* slightly more rounded */
+    text-align: center;
+    color: #fff !important;
+    background: none !important;
+    transition: background 0.2s, transform 0.2s;
+}
+.navbar .dropdown-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff !important;
+    transform: scale(1.03);
+}
+
+/* Dropdown toggle caret */
+.navbar .dropdown-toggle .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    margin-left: 0.3rem;
+}
+
+/* Dropdown menu */
+.navbar .dropdown-menu {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 0.4rem 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* slightly stronger shadow */
+}
+
+/* Dropdown items */
+.navbar .dropdown-menu > li > a {
+    color: #333 !important;
+    padding: 8px 15px;
+    background: none !important;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* Dropdown items hover: text becomes navbar blue, no background */
+.navbar .dropdown-menu > li > a:hover {
+    background: none !important;
+    color: #295573 !important;
+    transform: scale(1.03);
+}
+
+/* Divider in dropdown */
+.navbar .dropdown-menu .divider {
+    height: 1px;
+    margin: 5px 0;
+    background-color: #e5e5e5;
+}
+
+/* Collapse button (for mobile) */
+.btncollapse {
+    background-color: #355178;
+    border: 1px solid #2e4e72;
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: #fff !important;
+    transition: background 0.2s, transform 0.2s;
+}
+.btncollapse:hover {
+    background-color: #2e4e72;
+    transform: scale(1.05);
+}
+
+/* Collapsed nav (mobile) */
+.nav-collapse.collapse {
+    background-color: #295573;
+}
+
+/* headings */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+    margin: 30px 0;
+}
+
+.container {
+    margin-top: 40px; /* adds top space to all containers */
+}
+
+h2 {
+    margin-top: 50px;
+}
+
+
+/* Navbar icons  */
+.navbar .nav > li > a i.fa {
+    font-size: 1.4rem;
+    vertical-align: middle;
+    transition: color 0.2s, transform 0.2s;
+}
+.navbar .nav > li > a:hover i.fa {
+    color: #ffffff !important;
+    transform: scale(1.1);
+}
+
+/* =========main page notifications section========= */
+
+/* button */
+.btn.btn-primary {
+    background-color: #295573; /* Spacelab blue */
+    background-image: linear-gradient(to bottom, #3c5d86, #295573);
+    border: 1px solid #2e4e72;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 16px;   /* same as warning button */
+    font-size: 0.9rem;   /* same as warning button */
+    border-radius: 6px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+}
+/* Hover effect */
+.btn.btn-primary:hover {
+   background-color: #3c5d86;
+    background-image: linear-gradient(to bottom, #355178, #3c5d86);
+    border-color: #2e4e72;
+    transform: translateY(-1px);
+}
+
+/* Active/pressed effect */
+.btn.btn-primary:active {
+    background-color: #2e4e72;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Notification row */
+.row {
+    display: flex;
+    align-items: center;       /* vertically center icon and text */
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+
+/* Icon alignment */
+.span1 {
+    display: flex;
+    align-items: flex-start;   /* align to the top */
+    justify-content: center;
+}
+
+.span1 img {
+    margin-top: 4px;           /* push icon down slightly */
+}
+/* Message text */
+.msgdescription {
+    margin-left: 10px;         /* spacing from icon */
+    font-family: 'Aptos', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.msgdescription p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Optional: subtle time styling */
+.msgdescription .time {
+    color: #666;
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+
+/*======View all notifications page=========*/
+
+/* Container spacing */
+.container {
+    margin-top: 30px;
+}
+
+/* Notifications title */
+.container h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between icon and text */
+}
+
+.container h2 i {
+    color: #295573;  /* match navbar blue */
+    font-size: 1.4rem;
+}
+
+/* Well (notification box) */
+.well {
+    width: 820px;
+    margin-left: 2px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Notification row */
+.well .row {
+    display: flex;
+    align-items: center; /* vertical alignment of icon + text */
+    margin-bottom: 12px;
+    margin-left: 4px;
+}
+
+/* Notification icon */
+.well .row .span1 img {
+    max-width: 36px;
+    margin-top: 2px; /* tweak alignment */
+}
+
+/* Notification text */
+.well .row .span7 p {
+    margin: 0;
+    line-height: 1.4;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* Highlight sender */
+.well .row .span7 strong {
+    color: #295573; /* blue sender name */
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+/* Divider */
+.well hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+/*  ========Main Failed Logins==========*/
+/* Warning  "Clear All" button*/
+.btn.btn-warning {
+    background-color: #e38d13; /* warm orange */
+    background-image: linear-gradient(to bottom, #d67c0f, #e38d13);
+    border: 1px solid #b3680c;
+    color: #fff !important;
+    font-weight: 500;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* space between icon and text */
+    text-decoration: none !important; /* remove underline */
+}
+
+/* Hover effect */
+.btn.btn-warning:hover {
+    background-color: #d67c0f;
+    background-image: linear-gradient(to bottom, #b3680c, #d67c0f);
+    border-color: #9a580b;
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+
+/* Active/pressed effect */
+.btn.btn-warning:active {
+    background-color: #b3680c;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ========main Game control section - buttons======== */
+.game_button_area .btn.game_button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Success button (green) */
+.btn.btn-success {
+    background-color: #4cae4c;
+    background-image: linear-gradient(to bottom, #449d44, #4cae4c);
+    border: 1px solid #398439;
+    color: #fff;
+}
+.btn.btn-success:hover {
+    background-color: #449d44;
+    background-image: linear-gradient(to bottom, #398439, #449d44);
+    transform: translateY(-1px);
+}
+.btn.btn-success:active {
+    background-color: #398439;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Warning button (orange) */
+.btn.btn-warning {
+    background-color: #e38d13;
+    background-image: linear-gradient(to bottom, #d67c0f, #e38d13);
+    border: 1px solid #b3680c;
+    color: #fff;
+}
+.btn.btn-warning:hover {
+    background-color: #d67c0f;
+    background-image: linear-gradient(to bottom, #b3680c, #d67c0f);
+    transform: translateY(-1px);
+}
+.btn.btn-warning:active {
+    background-color: #b3680c;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Button icons */
+.game_button i.fa {
+    font-size: 1.2rem;
+}
+
+/* Button label text */
+.game_button_area .game_button_text {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+/* ======Automatic Ban section - Buttons=========*/
+#automatic-ban-button .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* space between icon and text */
+}
+
+/* Enable button (success green) */
+#automatic-ban-button .btn-success {
+    background-color: #4cae4c;
+    background-image: linear-gradient(to bottom, #449d44, #4cae4c);
+    border: 1px solid #398439;
+    color: #fff;
+}
+#automatic-ban-button .btn-success:hover {
+    background-color: #449d44;
+    background-image: linear-gradient(to bottom, #398439, #449d44);
+    transform: translateY(-1px);
+}
+#automatic-ban-button .btn-success:active {
+    background-color: #398439;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Disable button (danger red) */
+#automatic-ban-button .btn-danger {
+    background-color: #d9534f;
+    background-image: linear-gradient(to bottom, #c9302c, #d9534f);
+    border: 1px solid #ac2925;
+    color: #fff;
+}
+#automatic-ban-button .btn-danger:hover {
+    background-color: #c9302c;
+    background-image: linear-gradient(to bottom, #ac2925, #c9302c);
+    transform: translateY(-1px);
+}
+#automatic-ban-button .btn-danger:active {
+    background-color: #ac2925;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Button icons */
+#automatic-ban-button .btn i.fa {
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+/* ========Login form=======  */
+.form-signin {
+    max-width: 380px;             /* reasonable width */
+    margin: 80px auto 0 auto;     /* top margin to clear navbar, center horizontally */
+    padding: 30px;
+    background-color: #f8f9fa;    /* light grey background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Form heading */
+.form-signin-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.form-signin-heading i.fa {
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+/* Inputs */
+.form-signin .input-block-level {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-signin .input-block-level:focus {
+    border-color: #295573;         /* match navbar blue */
+    box-shadow: 0 0 5px rgba(68,110,155,0.5);
+    outline: none;
+}
+
+/* Submit button */
+.form-signin .btn.btn-primary {
+    width: 100%;
+    background-color: #295573; 
+    background-image: linear-gradient(to bottom, #3c5d86, #295573);
+    border: 1px solid #2e4e72;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.form-signin .btn.btn-primary:hover {
+    background-color: #3c5d86;
+    background-image: linear-gradient(to bottom, #355178, #3c5d86);
+    transform: translateY(-1px);
+}
+
+.form-signin .btn.btn-primary:active {
+    background-color: #2e4e72;
+    background-image: none;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* =========Settings-avatar box========== */
+
+.span3.well {
+    width: 800px !important;        /* override inline width */
+    height: 220px;                  /* taller rectangle */
+    padding: 25px 30px;
+    background-color: #f8f9fa;      /* light grey background */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.span3.well img.img-polaroid {
+    width: 200px;       /* bigger but still fits box */
+    height: auto;       /* maintain aspect ratio */
+    max-height: 160px;  /* don’t exceed box height */
+    display: block;
+    margin-bottom: 10px; /* small spacing below */
+    padding: 10px;
+}
+
+/* =======Boxes page========== */
+/* Whole page spacing */
+.row-fluid {
+  margin-top: 40px; /* space from navbar */
+}
+
+/* Sidebar (left) */
+#navWrapper {
+  margin-top: 60px;        /* space below the navbar */
+  padding: 15px;
+  background: #f8f9fa;     /* light gray background */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 220px;            /* a bit wider like a sidebar */
+}
+
+#navWrapper strong {
+  font-size: 16px;
+  color: #333;
+}
+
+#navWrapper li a {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  border-radius: 4px;
+}
+
+#navWrapper li a:hover {
+  background-color: #007bff;  /* Spacelab blue */
+  color: #fff;                /* white text */
+  text-decoration: none;
+}
+
+/* Main content (right side) */
+.span10 {
+  margin-left: 240px;  /* push right to make space for sidebar */
+  padding: 0 20px;
+}
+
+/* outer container of boxes*/
+#fedf3619-6933-498b-b193-9a34d931eb8d {
+  width: 70%;            /* keep it wide */
+  margin: 30px auto 30px 20px;  
+  padding: 25px 30px;
+}
+/* inside container of boxes*/
+/* ======= Box Container ======= */
+.well {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 35px;
+  margin: 20px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.well:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.well h3 i {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+/* Box Buttons */
+.well .btn {
+  margin: 4px 4px 4px 0;
+}
+
+.well .btn-small {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+/* Box Image */
+.well .span4 img {
+  max-width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+}
+
+/* Box Description */
+.well .preformatted.markdown {
+  border-left: 3px solid #007bff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Section Boxes: Flags, Hints, IPs */
+.startflags,
+.starthints,
+.startips {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+
+.startflags h4,
+.starthints h4,
+.startips h4 {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.startflags h4 i,
+.starthints h4 i,
+.startips h4 i {
+  margin-right: 6px;
+  color: #007bff;
+}
+
+/* Section Buttons */
+.startflags .btn,
+.starthints .btn,
+.startips .btn {
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Section Tables */
+.startflags table,
+.starthints table,
+.startips table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.startflags table th,
+.starthints table th,
+.startips table th {
+  background: #f1f1f1;
+  text-align: center;
+  font-weight: 600;
+  color: #444;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+.startflags table td,
+.starthints table td,
+.startips table td {
+  vertical-align: middle;
+  font-size: 13px;
+  color: #555;
+  padding: 6px 8px;
+}
+
+/* Buttons inside tables */
+.startflags .btn-mini,
+.starthints .btn-mini,
+.startips .btn-mini {
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* Word break in table */
+.startflags .wordbreak,
+.starthints .wordbreak,
+.startips .wordbreak {
+  word-break: break-word;
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+  .well, .startflags, .starthints, .startips {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .well h3 {
+    font-size: 18px;
+  }
+
+  .startflags table th,
+  .starthints table th,
+  .startips table th,
+  .startflags table td,
+  .starthints table td,
+  .startips table td {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+}
+
+/* ======= Scoreborard page ======= */
+/* Pagination container */
+/* Title*/
+.row-fluid .offset1 {
+    margin-left: 0.3px;
+    margin-bottom: 0;
+ 
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5px 15px;
+  margin: 0 20px 20px 0;
+  background: #f8f9fa;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+}
+
+/* List inside pagination */
+.pagination ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  align-items: stretch; /* make items same height */
+}
+
+/* Label item (not clickable) */
+.pagination li.disabled a {
+  cursor: default;
+  color: #666;
+  font-weight: 500;
+  padding: 5px 12px;
+  border: 1px solid #ccc;
+  border-right: none; /* merge with select */
+  border-radius: 4px 0 0 4px; /* rounded left corners */
+  display: flex;
+  align-items: center;
+  height: 32px;
+  pointer-events: none;
+  background: #e9ecef;
+}
+
+/* Select box styling */
+.pagination li select {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 0 4px 4px 0; /* rounded right corners */
+  font-size: 14px;
+  cursor: pointer;
+  height: 44px; /* same height as label */
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.pagination li select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 3px rgba(0,123,255,0.5);
+}
+
+
+/* scoreborad summary container */
+.well.span7.offset1 {
+    width: 800px !important;        /* match .span3.well width */
+    height: 220px;                  /* match height */
+    padding: 25px 30px;             /* same padding */
+    background-color: #f8f9fa;      /* light grey background */
+    border: 1px solid #ddd;         /* border */
+    border-radius: 10px;            /* rounded corners */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12); /* subtle shadow */
+    overflow-x: auto;               /* scroll if content too wide */
+    margin: 20px auto;              /* center horizontally with spacing */
+    box-sizing: border-box;         /* include padding/border in size */
+}
+
+/* Make table fill container nicely */
+.well.span7.offset1 table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+/* Adjust table headers */
+.well.span7.offset1 table th {
+    text-align: center;
+    font-weight: 600;
+    color: #444;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+/* Table body cells */
+.well.span7.offset1 table td {
+    vertical-align: middle;
+    font-size: 13px;
+    color: #555;
+    padding: 6px 8px;
+}
+
+/* Progress bars inside table (optional enhancement) */
+.well.span7.offset1 .progress {
+    background-color: #424242;
+    height: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.well.span7.offset1 .bar.minibar {
+    background-color: rgb(238,238,0);
+    background-image: linear-gradient(rgb(238,238,0), rgb(179,179,0));
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Level Progress Bar */
+.well.span7.offset1 .progress {
+    height: 12px;                        /* taller for better visibility */
+    margin-bottom: 8px;
+    background-color: #333;              /* darker background for contrast */
+    border-radius: 6px;                  /* smooth corners */
+    overflow: hidden;
+}
+
+.well.span7.offset1 .bar.minibar {
+    height: 100%;
+    background-color: #ffdd00;           /* bright yellow */
+    background-image: linear-gradient(#ffdd00, #ffaa00); /* gradient for depth */
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;  /* smooth animation when width changes */
+}
+
+/* shadow for better visibility */
+.well.span7.offset1 .bar.minibar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+
+/* ======= charts history board ======= */
+.container a i,
+.container li,
+.container select,
+.container option {
+    color: #000 !important;
+}
+#flags-history-button,
+#money-history-button {
+    color: #000000 !important;   /* black text */
+}
+
+#flags-history-button i,
+#money-history-button i {
+    color: #000000 !important;   /* ensure icons are black too */
+}
+#history{
+    color: #000000 !important; 
+}
+/* Make Highcharts titles black */
+.highcharts-title {
+    fill: #000000 !important;   /* sets SVG text color */
+    color: #000000 !important;  /* fallback for some cases */
+    text-shadow: none !important; /* remove text shadow if needed */
+}
+
+/* ======= Teams page ======= */
+/* Shift team cards slightly to the left inside .span10 */
+.span10 .container[align="middle"] {
+    margin-left: 20px;    /* shift cards to the left */
+    margin-right: auto;   /* keep spacing on the right */
+    text-align: center;   /* center content inside card */
+    max-width: 95%;       /* prevent it from stretching too much */
+}
+
+/* Keep hover effect */
+.span10 .container[align="middle"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Keep avatars nicely spaced and centered */
+.span10 .container[align="middle"] .span2 {
+    display: inline-block;
+    margin-right: 15px;
+    text-align: center;
+}
+/* Team card container */
+.container[align="middle"] {
+    background-color: #f8f9fa;    /* light grey background */
+    border: 1px solid #ddd;       /* subtle border */
+    border-radius: 12px;           /* rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* soft shadow */
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for card */
+.container[align="middle"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Team heading inside card */
+.container[align="middle"] h2 {
+    margin-bottom: 15px;
+}
+
+/* Team main image */
+.container[align="middle"] img.img-polaroid {
+    margin-bottom: 20px;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto 20px auto; 
+}
+
+/* User avatars under team image */
+.container[align="middle"] .span2 img.img-polaroid {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100px;
+    border-radius: 6px;
+}
+
+/* Progress bars inside card */
+.summarycolumn .progress {
+    margin: 10px auto; 
+    height: 10px;
+    background-color: #424242;
+    border-radius: 5px;
+}
+
+.summarycolumn .progress .bar {
+    background-color: #eee800;
+    background-image: linear-gradient(#eee800, #b3b300);
+}
+
+/* Flags text */
+h4 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* Add spacing between cards if multiple */
+.container[align="middle"] + .container[align="middle"] {
+    margin-top: 30px;
+}
+
+/* ======= Source code market page ======= */
+/* Style buttons */
+#add-source-code-button0,
+#add-source-code-button1 {
+    background-color: #295573; /* Spacelab blue */
+    background-image: linear-gradient(to bottom, #3c5d86, #295573);
+    border: 1px solid #2e4e72;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+    text-decoration: none;
+    display: inline-block;
+}
+/* Hover effect */
+#add-source-code-button0:hover,
+#add-source-code-button1:hover {
+    background-color: #3c5d86;
+    background-image: linear-gradient(to bottom, #355178, #3c5d86);
+    border-color: #2e4e72;
+    transform: translateY(-1px);
+    color: #fff;
+}
+/* close button of Add Source Code to Market */
+.modal-footer .btn {
+    padding: 8px 16px;       /* same as primary button */
+    font-size: 0.9rem;       /* same font size */
+    border-radius: 6px;      /* rounded corners */
+    font-weight: 500;        /* same weight */
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+}
+
+/* ======= File sharing page ======= */
+
+/* Make form fields stack vertically */
+.control-group table {
+    width: 100%;
+}
+
+.control-group table td {
+    display: block;        /* make each td take full width */
+    margin-bottom: 15px;   /* spacing between fields */
+}
+
+/* Labels above inputs */
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Inputs and textarea full width */
+.control-group select,
+.control-group input,
+.control-group textarea {
+     width: 100%;
+    padding: 12px 16px;       /* bigger padding */
+    font-size: 1rem;          /* larger text */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* enlarge the file field*/
+input[type="file"] {
+    height: 50px;
+    line-height: 30px;
+}
+/* enlarge the Team select field */
+#team-uuid {
+    height: 50px;
+    width: 100%;
+    padding: 12px 16px;   /* bigger padding */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Form button inside control-group */
+.control-group button.btn {
+    background-color: #295573; /* Spacelab blue */
+    background-image: linear-gradient(to bottom, #3c5d86, #295573);
+    border: 1px solid #2e4e72;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1),
+                0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.control-group button.btn:hover {
+    background-color: #3c5d86;
+    background-image: linear-gradient(to bottom, #344d70, #3c5d86);
+    transform: translateY(-1px);
+}
+
+/* Active (pressed) state */
+.control-group button.btn:active {
+    background-color: #2e4e72;
+    background-image: none;
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* container style */
+.control-group {
+    padding: 20px;
+    border-radius: 12px;
+}
+/* Accordion section text */
+.well #accordion {
+    margin: 10px 0 20px 0;
+    padding: 15px;
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.well #accordion strong {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* ======= Alert menu of the users ======= */
+.dropdown-menu.dropdown-alert-menu li span {
+    color: black;
+}
+
+/* ======= File sharing - user view ======= */
+/* Container card look */
+.span4 .well {
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Labels */
+#share-file label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* Inputs and textarea */
+#share-file input[type="file"],
+#share-file textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Textarea resizing only vertical */
+#share-file textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ======= Create box page - buttons ======= */
+#operating-system .osbutton.active {
+    border: 2px solid black; /* Highlight selected button with black border */
+}

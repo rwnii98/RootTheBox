@@ -52,6 +52,10 @@ from handlers.MissionsHandler import *
 from handlers.NotificationHandlers import *
 from handlers.PastebinHandlers import *
 from handlers.PublicHandlers import *
+from handlers.Auth0LoginHandlers import *
+from handlers.Auth0ValidateHandler import *
+from handlers.Auth0ChangePasswordHandler import *
+from handlers.GetUserHandler import *
 from handlers.ScoreboardHandlers import *
 from handlers.StaticFileHandler import StaticFileHandler
 from handlers.UpgradeHandlers import *
@@ -85,7 +89,11 @@ def get_cookie_secret():
 # First get base URLs that all game types will require
 urls = [
     # Public handlers - PublicHandlers.py
-    (r"/login", LoginHandler),
+    (r"/login", Auth0LoginHandler),
+    (r"/login/callback", Auth0LoginHandler),
+    (r"/auth/validate", Auth0ValidateHandler),
+    (r"/auth/change_password", Auth0ChangePasswordHandler),
+    (r"/auth/get-user", GetUserHandler),
     (r"/oidc", CodeFlowHandler),
     (r"/about", AboutHandler),
     (r"/", HomePageHandler),
