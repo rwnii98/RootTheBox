@@ -751,7 +751,7 @@
             {% end %}
             {% if len(Corporation.all()) > 0 %}
                 {% for corp_index, corporation in enumerate(Corporation.all()) %}
-                    <div id="{{ corporation.uuid }}" class="well{% if corporation.locked %} locked{% end %}">
+                    <div id="{{ corporation.uuid }}" class="well corp-well{% if corporation.locked %} locked{% end %}">
                         <h2 style="display:inline;">
                             <i class="fa fa-fw fa-building-o"></i>
                             {{ corporation.name }}&nbsp;&nbsp;

@@ -655,7 +655,7 @@ h2 {
 
 /* Box Description */
 .well .preformatted.markdown {
-  border-left: 3px solid #007bff;
+  border-left: 3px solid;
   padding: 10px 15px;
   border-radius: 5px;
   margin: 10px 0;
@@ -1209,4 +1209,20 @@ input[type="file"] {
 /* ======= Create box page - buttons ======= */
 #operating-system .osbutton.active {
     border: 2px solid black; /* Highlight selected button with black border */
+}
+
+/* ======= Target management page ======= */
+/* Outer corporation */
+.corp-well {
+    width: 850px;        /* slightly bigger than box wells */
+    padding: 25px;       /* space for inner boxes */
+    margin: 20px auto;   /* center if needed */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.locked {
+    background-color: rgb(250, 161, 161) !important; /* baby red / soft coral */
 }
