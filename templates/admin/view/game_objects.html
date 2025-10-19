@@ -775,7 +775,11 @@
                             <i class="fa fa-fw fa-times-circle-o"></i>
                             {{_("Delete Corporation")}}
                         </a>
-                        <br />{% if corporation.description %}<br>&nbsp;&nbsp;{{ corporation.description }}<br />{% end %}
+                        <br />{% if corporation.description %}
+                        <div class="preformatted markdown" style="text-align: justify; padding: 0 20px; margin-left: 10px;">
+                        &nbsp;&nbsp;{{ corporation.description }}
+                        </div>
+                        {% end %}
                         <br />
                         {% if len(corporation.boxes) != 0 %}
                             {% for box in sorted(corporation.boxes) %}
