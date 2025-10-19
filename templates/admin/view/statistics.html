@@ -191,7 +191,7 @@
             {% end %}
             {% for corp_index, corporation in enumerate(Corporation.all()) %}
             {% if len(Corporation.all()) > 1 %}
-                <div id="{{ corporation.uuid }}" class="well">
+                <div id="{{ corporation.uuid }}" class="well corp-well">
                     
                     <h2 style="display:inline;">
                         <i class="fa fa-fw fa-building-o"></i>
