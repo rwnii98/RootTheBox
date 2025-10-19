@@ -1214,15 +1214,9 @@ input[type="file"] {
 /* ======= Target management page ======= */
 /* Outer corporation */
 .corp-well {
-    width: 850px;        /* slightly bigger than box wells */
-    padding: 25px;       /* space for inner boxes */
-    margin: 20px auto;   /* center if needed */
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 950px;        /* slightly bigger than box wells */
 }
 
 .locked {
-    background-color: rgb(250, 161, 161) !important; /* baby red / soft coral */
+    background-color: rgb(126, 125, 125) !important; /* baby red / soft coral */
 }
