@@ -1032,7 +1032,7 @@ h4 {
 
 /* ======= Source code market page ======= */
 /* Style buttons */
-.btn-mini {
+.btn2-mini {
     background-color: #295573; /* Spacelab blue */
     background-image: linear-gradient(to bottom, #3c5d86, #295573);
     border: 1px solid #2e4e72;
@@ -1048,7 +1048,7 @@ h4 {
     display: inline-block;
 }
 /* Hover effect */
-.btn-mini:hover {
+.btn2-mini:hover {
     background-color: #3c5d86;
     background-image: linear-gradient(to bottom, #355178, #3c5d86);
     border-color: #2e4e72;
