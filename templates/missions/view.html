@@ -67,9 +67,10 @@
 
             {% set has_level = (not team or level.type == 'none' or level in team.game_levels) and level.type != 'locked'  %}
             {% if not (level.type == 'hidden' and not has_level) %}
-            <div class="well">
+            <div class="well outer-well">
                 {% if len(GameLevel.all()) > 1 %}
                     <h3 class="levelheader">
+                    
                         {% if has_level %}
                             <i class="fa fa-unlock-alt"></i>
                         {% else %}
@@ -91,7 +92,7 @@
                     <hr>
                 {% end %}
                 {% if has_level %}
-                    <div class="container">
+                    <div class="container inner-container">
                         {% set boxes = [] %}
                         {% for box in sorted(level.unlocked_boxes()) %}
                             <!-- Only show boxes that have flags -->

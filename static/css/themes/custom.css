@@ -1220,3 +1220,15 @@ input[type="file"] {
 .locked {
     background-color: rgb(196, 194, 194) !important; /* baby red / soft coral */
 }
+
+/* ======= Missions page- user view ======= */
+.outer-well {
+    width: 95%;           /* wider than normal container */
+    margin: 0 auto;       /* still centered */
+    padding: 30px;        /* adjust spacing */
+}
+
+.inner-container {
+    max-width: 80%;       /* make inner narrower */
+    margin: 0 auto;       /* keep it centered inside the well */
+}
