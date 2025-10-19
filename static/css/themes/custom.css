@@ -655,7 +655,6 @@ h2 {
 
 /* Box Description */
 .well .preformatted.markdown {
-  border-left: 3px solid;
   padding: 10px 15px;
   border-radius: 5px;
   margin: 10px 0;
