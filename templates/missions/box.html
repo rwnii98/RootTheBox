@@ -262,7 +262,7 @@
         </div>
         {% end %}
         <div class="well">
-            <table class="table table-hover table-bordered table-striped table-sm" style="direction: rtl; text-align: right;">
+            <table class="table table-hover table-bordered" style="direction: rtl; text-align: right;">
             <caption><h4> - {{ _("الأعلام") }} - </h4></caption>
             <thead>
                 <tr>
@@ -346,7 +346,7 @@
                                 </td>
                             
                                 {% if flag in team.flags %}
-                                    <td class="shortcolumn successtext" style="text-align: right; padding: 5px 10px; vertical-align: middle;"><i class="fa fa-check-circle"></i></td>
+                                    <td class="shortcolumn successtext" style="text-align: right; padding: 5px 10px; vertical-align: middle;"><i class="fa fa-check-circle" style="text-align: center;margin-right: 15px;"></i></td>
                                 {% elif box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX and penalty >= options.max_flag_attempts %}
                                     <td class="shortcolumn disabledtext" style="text-align: right;"><i class="fa fa-ban" title="Max Attempts Reached"></i></td>
                                 {% else %}         
