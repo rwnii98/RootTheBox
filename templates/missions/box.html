@@ -361,7 +361,7 @@
                             {% if hint.flag_id == flag.id %}
                                 {% if user.is_admin() or flag in team.flags or hint in team.hints %}
                                     <tr>
-                                        <td colspan="8" class="descriptioncol markdown" style="border-top: 1px solid #ddd;">
+                                        <td colspan="8" class="descriptioncol markdown" style="direction: rtl; text-align: right; border-top: 1px solid #ddd;">
                                             <i class="fa fa-arrow-circle-up"></i>
                                             <strong>{{ _("تلميح") }} #{{ i }}:</strong>
                                             {{ hint.description }}
