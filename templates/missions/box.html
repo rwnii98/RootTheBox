@@ -267,14 +267,14 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th style="text-align: right;">{{ _("الاسم") }}</th>
+                    <th style="text-align: right;"><!-- Name --></th>
                     <th style="text-align: right;">{{ _("الوصف") }}</th>
                     <th style="text-align: center;">{% if options.scoreboard_visibility != 'admins' %}{{ _("الالتقاطات") }}{% end %}</th>
                     <th style="text-align: center;">{% if options.banking %}{{ _("المكافأة") }}{% else %}{{ _("النقاط") }}{% end %}</th>
                     {% if team and options.penalize_flag_value and not user.is_admin() %}
                         <th style="text-align: center;">{{ _("المحاولات") }}</th>
                     {% end %}
-                    <th style="text-align: center;">{{ _("التلميحات") }}</th>
+                    <th style="text-align: center;"><!-- Hints --></th>
                     <th style="text-align: center;">{{ _("الإرسال") }}</th>
                 </tr>
             </thead>
