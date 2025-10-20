@@ -262,7 +262,7 @@
         </div>
         {% end %}
         <div class="well">
-            <table class="table table-hover table-bordered" style="direction: rtl; text-align: right;">
+            <table class="table table-hover table-borderless table-sm" style="direction: rtl; text-align: right;">
             <caption><h4> - {{ _("الأعلام") }} - </h4></caption>
             <thead>
                 <tr>
@@ -312,7 +312,7 @@
                             <td></td>
                             <td></td>
                         {% else %}
-                            <!-- <td style="width: 100%;"></td> -->
+                            <td style="width: 100%;"></td>
                             <td class="shortcolumn centercolumn">{% if options.scoreboard_visibility != 'admins' %}{{ len(Flag.team_captures(flag.id)) }}{% end %}</td>
                             {% if team and options.penalize_flag_value and not user.is_admin() %}
                                 <td class="shortcolumn centercolumn">{% if flag in team.flags %}{{ penalty + 1 }}{% else %}{{ penalty }}{% end %}</td>
