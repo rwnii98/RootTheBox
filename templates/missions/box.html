@@ -267,8 +267,8 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>{{ _("الاسم") }}</th>
-                    <th>{{ _("الوصف") }}</th>
+                    <th style="text-align: right;">{{ _("الاسم") }}</th>
+                    <th style="text-align: right;">{{ _("الوصف") }}</th>
                     <th style="text-align: center;">{% if options.scoreboard_visibility != 'admins' %}{{ _("الالتقاطات") }}{% end %}</th>
                     <th style="text-align: center;">{% if options.banking %}{{ _("المكافأة") }}{% else %}{{ _("النقاط") }}{% end %}</th>
                     {% if team and options.penalize_flag_value and not user.is_admin() %}
@@ -288,10 +288,10 @@
                         <td class="shortcolumn">{{ box.flags.index(flag) + 1 }}</td>
 
                         <!-- الاسم -->
-                        <td class="shortcolumn" style="font-weight: bold;">{{ flag.name }}</td>
+                        <td class="shortcolumn" style="direction: rtl; text-align: right; font-weight: bold;">{{ flag.name }}</td>
 
                         <!-- الوصف -->
-                        <td class="descriptioncol markdown">{{ flag.description }}</td>
+                        <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ flag.description }}</td>
 
                         <!-- الالتقاطات -->
                         <td class="shortcolumn centercolumn">
