@@ -303,11 +303,7 @@
                         <td class="shortcolumn" style="vertical-align: middle; padding-right: 20px; font-weight: bold;">{{ flag.name }}</td>
 
                         <!-- الوصف -->
-                        {% if team and flag.lock_id and Flag.by_id(flag.lock_id) and not Flag.by_id(flag.lock_id) in team.flags %}
-                            <td class="descriptioncol"><i class="fa fa-lock"></i> {{ _("مقفول بواسطة") }} {{ Flag.by_id(flag.lock_id).name }}</td>
-                        {% else %}
-                            <td style="width: 100%;">{{ flag.description }}</td>
-                        {% end %}
+                        <td class="descriptioncol markdown" style="vertical-align: middle;">{{ flag.description }}</td>
 
                         <!-- الالتقاطات -->
                         <td class="shortcolumn centercolumn">{% if options.scoreboard_visibility != 'admins' %}{{ len(Flag.team_captures(flag.id)) }}{% end %}</td>
@@ -321,15 +317,13 @@
                         <td class="shortcolumn centercolumn">{% if options.banking %}${% end %}{{ flag.dynamic_value(team) }}</td>
 
                         <!-- التلميحات -->
-                        {% if team and not user.is_admin() %}
-                            <td class="shortcolumn" {% if not flag in team.flags %} style="padding-right: 10px;"{% end %}>
+                        <td class="shortcolumn" style="text-align: center;">
+                            {% if team and not user.is_admin() %}
                                 {% if not flag in team.flags %}
                                     {% set i = 1 %}
                                     {% for hint in flaghints %}
                                         {% if hint.flag_id == flag.id %}
-                                            {% if False and box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX and penalty >= options.max_flag_attempts %}
-                                                {% break %}
-                                            {% elif not hint in team.hints %}
+                                            {% if not hint in team.hints %}
                                                 <a id="purchase-flag-hint-button{{ index }}" class="btn btn-mini" data-toggle="modal" href="#purchase-hint-modal" data-price="{{ hint.price }}" data-uuid="{{ hint.uuid }}">
                                                     {{ _("تلميح") }} #{{ i }}
                                                 </a>
@@ -346,16 +340,16 @@
                                         {{ _("القصة") }}
                                     </a>
                                 {% end %}
-                            </td>
-                        {% end %}
+                            {% end %}
+                        </td>
 
                         <!-- الإرسال -->
                         {% if team and flag in team.flags %}
-                            <td class="shortcolumn successtext" style="text-align: right; padding: 5px 10px; vertical-align: middle;"><i class="fa fa-check-circle"></i></td>
+                            <td class="shortcolumn successtext" style="text-align: center; vertical-align: middle;"><i class="fa fa-check-circle"></i></td>
                         {% elif box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX and penalty >= options.max_flag_attempts %}
-                            <td class="shortcolumn disabledtext" style="text-align: right;"><i class="fa fa-ban" title="تم الوصول إلى الحد الأقصى"></i></td>
+                            <td class="shortcolumn disabledtext" style="text-align: center;"><i class="fa fa-ban" title="تم الوصول إلى الحد الأقصى"></i></td>
                         {% else %}
-                            <td class="shortcolumn">
+                            <td class="shortcolumn" style="text-align: center;">
                                 {% if box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX or not flag.is_static %}
                                     <a id="capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-button{{ index }}" class="btn btn-mini" data-toggle="modal" href="#capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-modal" data-uuid="{{ flag.uuid }}" data-choices='{{ str(flag.choicelist()) }}'>
                                         <i class="fa fa-flag"></i>
@@ -366,15 +360,7 @@
                         {% end %}
                     </tr>
 
-                    {% if team and flag.lock_id and Flag.by_id(flag.lock_id) and not Flag.by_id(flag.lock_id) in team.flags %}
-                    {% else %}
-                        <tr {% if team and flag in team.flags %}class="flag-collapse" style="display: none;"{% end %}>
-                            <td colspan="{% if team and options.penalize_flag_value %}5{% else %}4{% end %}" class="descriptioncol markdown">{{ flag.description }}</td>
-                            <td style="border-top: 0px;"></td>
-                            <td style="border-top: 0px;"></td>
-                        </tr>
-                    {% end %}
-
+                    <!-- عرض التلميحات تحت كل Flag -->
                     {% if len(flaghints) > 0 %}
                         {% set i = 1 %}
                         {% for hint in flaghints %}
@@ -382,8 +368,9 @@
                                 {% if user.is_admin() or flag in team.flags or hint in team.hints %}
                                     <tr {% if team and flag in team.flags %}class="flag-collapse" style="display: none;"{% end %}>
                                         <td class="hidehovercolor" style="background: green; margin: 0px; padding: 0px;"></td>
-                                        <td colspan="7" class="descriptioncol markdown">
+                                        <td colspan="8" class="descriptioncol markdown">
                                             <i class="fa fa-arrow-circle-up"></i> <strong>{{ _("تلميح") }} #{{ i }}:</strong> {{ hint.description }}
+                                            {% if team and hint in team.hints %}<span style="float: left; color: green;">{{ _("تم الشراء") }}</span>{% end %}
                                         </td>
                                     </tr>
                                 {% end %}
@@ -394,6 +381,7 @@
                 </tbody>
             {% end %}
         </table>
+
 
 
 
