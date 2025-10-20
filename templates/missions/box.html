@@ -377,7 +377,7 @@
                             {% else %}
                             <td colspan="2" style="border-top: 0px;"></td>
                             {% end %}
-                            <td colspan="{% if team and options.penalize_flag_value %}5{% else %}4{% end %}" class="descriptioncol markdown">{{ flag.description }}{% if flag.type == FLAG_CHOICE %}
+                            <td colspan="{% if team and options.penalize_flag_value %}5{% else %}4{% end %}" class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ flag.description }}{% if flag.type == FLAG_CHOICE %}
                                     {% set choices = FlagChoice.by_flag_id(flag.id) %}
                                     {% if choices and len(choices) > 0 %}{% for item in choices %}- {{item.choice}}
                                     {% end %}{% end %}{% end %}</td>
@@ -462,7 +462,7 @@
                                     <td class="shortcolumn">{{ index + 1 }}</td>
                                     {% if user.is_admin() or (team and hint in team.hints) or flagcount == len(box.flags) %}
                                         <td class="shortcolumn"><i>{% if user.is_admin() %}{% elif hint in team.hints %}{% if options.banking %}{{ _("Purchased") }}{% else %}{{ _("Taken") }}{% end %}{% else %}{{ _("Completed") }} {{box.name}}{% end %}</i></td>
-                                        <td class="descriptioncol markdown">{{ hint.description }}</td>
+                                        <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ hint.description }}</td>
                                     {% else %}
                                         <td class="shortcolumn" style="text-align: center; padding-right: 20px;">{% if options.banking %}${% end %}{% if hint in team.hints or flagcount != len(box.flags) %}{{ hint.price }}{% else %}0{% end %}</td>
                                         <td>{{ _("Hint not yet taken") }}</td>
