@@ -262,7 +262,7 @@
         </div>
         {% end %}
         <div class="well">
-<table class="table table-hover">
+            <table class="table table-hover">
                 <caption><h4> - {{ _("Flags") }} - </h4></caption>
                 <thead>
                     <tr>
@@ -277,7 +277,7 @@
                         <th style="text-align: center;">{% if options.banking %}{{ _("Reward") }}{% else %}{{ _("Points") }}{% end %}</th>
                         {% if team or not user.is_admin() %}
                             <th><!-- Hints --></th>
-                            <td class="shortcolumn" style="text-align: center;">
+                            <t <td class="shortcolumn" style="text-align: center;">
                             {% if not flag in team.flags %}
                                 {% set i = 1 %}h><!-- Submit --></th>
                         {% end %}
@@ -416,6 +416,7 @@
                     </tbody> 
                 {% end %}
             </table>
+
 
 
         </div>
