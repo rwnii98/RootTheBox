@@ -269,7 +269,7 @@
                     <th style="width: 6px; padding: 0px; margin: 0px;"><!-- success bar --></th>
                     <th>#</th>
                     <th><!-- الاسم --></th>
-                    <th style="direction: rtl; text-align: right;"><!-- Description --></th>
+                    <th><!-- الوصف --></th>
                     <th style="text-align: center;">{% if options.scoreboard_visibility != 'admins' %}{{ _("الالتقاطات") }}{% end %}</th>
                     {% if team and options.penalize_flag_value and not user.is_admin() %}
                         <th style="text-align: center;">{{ _("المحاولات") }}</th>
@@ -426,6 +426,7 @@
                 </tbody>
             {% end %}
         </table>
+
 
 
 
