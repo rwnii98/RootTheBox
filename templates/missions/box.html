@@ -266,16 +266,16 @@
             <caption><h4> - {{ _("الأعلام") }} - </h4></caption>
             <thead>
                 <tr>
-                    <th style="text-align: center;">{{ _("الإرسال") }}</th>
-                    <th>{{ _("التلميحات") }}</th>
+                    <th>#</th>
+                    <th>{{ _("الاسم") }}</th>
+                    <th>{{ _("الوصف") }}</th>
+                    <th style="text-align: center;">{% if options.scoreboard_visibility != 'admins' %}{{ _("الالتقاطات") }}{% end %}</th>
                     <th style="text-align: center;">{% if options.banking %}{{ _("المكافأة") }}{% else %}{{ _("النقاط") }}{% end %}</th>
                     {% if team and options.penalize_flag_value and not user.is_admin() %}
                         <th style="text-align: center;">{{ _("المحاولات") }}</th>
                     {% end %}
-                    <th style="text-align: center;">{% if options.scoreboard_visibility != 'admins' %}{{ _("الالتقاطات") }}{% end %}</th>
-                    <th>{{ _("الوصف") }}</th>
-                    <th>{{ _("الاسم") }}</th>
-                    <th>#</th>
+                    <th style="text-align: center;">{{ _("التلميحات") }}</th>
+                    <th style="text-align: center;">{{ _("الإرسال") }}</th>
                 </tr>
             </thead>
 
@@ -283,27 +283,35 @@
                 {% set penalty = Penalty.by_count(flag, team) %}
                 <tbody class="flagbody">
                     <tr {% if team and flag in team.flags %}class="flag-expand" style="cursor: pointer;"{% end %}>
-                        <!-- الإرسال -->
-                        {% if team and flag in team.flags %}
-                            <td class="shortcolumn successtext" style="text-align: center; vertical-align: middle;">
-                                <i class="fa fa-check-circle"></i>
-                            </td>
-                        {% elif box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX and penalty >= options.max_flag_attempts %}
-                            <td class="shortcolumn disabledtext" style="text-align: center;">
-                                <i class="fa fa-ban" title="{{ _('تم الوصول إلى الحد الأقصى') }}"></i>
-                            </td>
-                        {% else %}
-                            <td class="shortcolumn" style="text-align: center;">
-                                {% if box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX or not flag.is_static %}
-                                    <a id="capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-button{{ index }}"
-                                    class="btn btn-mini"
-                                    data-toggle="modal"
-                                    href="#capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-modal"
-                                    data-uuid="{{ flag.uuid }}"
-                                    data-choices='{{ str(flag.choicelist()) }}'>
-                                        <i class="fa fa-flag"></i>
-                                        {{ _("إرسال") }}
-                                    </a>
+                        
+                        <!-- الرقم -->
+                        <td class="shortcolumn">{{ box.flags.index(flag) + 1 }}</td>
+
+                        <!-- الاسم -->
+                        <td class="shortcolumn" style="font-weight: bold;">{{ flag.name }}</td>
+
+                        <!-- الوصف -->
+                        <td class="descriptioncol markdown">{{ flag.description }}</td>
+
+                        <!-- الالتقاطات -->
+                        <td class="shortcolumn centercolumn">
+                            {% if options.scoreboard_visibility != 'admins' %}
+                                {{ len(Flag.team_captures(flag.id)) }}
+                            {% end %}
+                        </td>
+
+                        <!-- النقاط / المكافأة -->
+                        <td class="shortcolumn centercolumn">
+                            {% if options.banking %}${% end %}{{ flag.dynamic_value(team) }}
+                        </td>
+
+                        <!-- المحاولات -->
+                        {% if team and options.penalize_flag_value and not user.is_admin() %}
+                            <td class="shortcolumn centercolumn">
+                                {% if flag in team.flags %}
+                                    {{ penalty + 1 }}
+                                {% else %}
+                                    {{ penalty }}
                                 {% end %}
                             </td>
                         {% end %}
@@ -334,25 +342,30 @@
                             {% end %}
                         </td>
 
-                        <!-- النقاط -->
-                        <td class="shortcolumn centercolumn">{% if options.banking %}${% end %}{{ flag.dynamic_value(team) }}</td>
-
-                        <!-- المحاولات -->
-                        {% if team and options.penalize_flag_value and not user.is_admin() %}
-                            <td class="shortcolumn centercolumn">{% if flag in team.flags %}{{ penalty + 1 }}{% else %}{{ penalty }}{% end %}</td>
+                        <!-- الإرسال -->
+                        {% if team and flag in team.flags %}
+                            <td class="shortcolumn successtext" style="text-align: center; vertical-align: middle;">
+                                <i class="fa fa-check-circle"></i>
+                            </td>
+                        {% elif box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX and penalty >= options.max_flag_attempts %}
+                            <td class="shortcolumn disabledtext" style="text-align: center;">
+                                <i class="fa fa-ban" title="{{ _('تم الوصول إلى الحد الأقصى') }}"></i>
+                            </td>
+                        {% else %}
+                            <td class="shortcolumn" style="text-align: center;">
+                                {% if box.flag_submission_type != FlagsSubmissionType.SINGLE_SUBMISSION_BOX or not flag.is_static %}
+                                    <a id="capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-button{{ index }}"
+                                    class="btn btn-mini"
+                                    data-toggle="modal"
+                                    href="#capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-modal"
+                                    data-uuid="{{ flag.uuid }}"
+                                    data-choices='{{ str(flag.choicelist()) }}'>
+                                        <i class="fa fa-flag"></i>
+                                        {{ _("إرسال") }}
+                                    </a>
+                                {% end %}
+                            </td>
                         {% end %}
-
-                        <!-- الالتقاطات -->
-                        <td class="shortcolumn centercolumn">{% if options.scoreboard_visibility != 'admins' %}{{ len(Flag.team_captures(flag.id)) }}{% end %}</td>
-
-                        <!-- الوصف -->
-                        <td class="descriptioncol markdown">{{ flag.description }}</td>
-
-                        <!-- الاسم -->
-                        <td class="shortcolumn" style="font-weight: bold;">{{ flag.name }}</td>
-
-                        <!-- الرقم -->
-                        <td class="shortcolumn">{{ box.flags.index(flag) + 1 }}</td>
                     </tr>
 
                     {% if len(flaghints) > 0 %}
@@ -378,6 +391,7 @@
                 </tbody>
             {% end %}
         </table>
+
 
 
         </div>
