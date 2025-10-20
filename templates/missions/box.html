@@ -269,7 +269,7 @@
                     <th style="width: 6px; padding: 0px; margin: 0px;"><!-- success bar --></th>
                     <th>#</th>
                     <th><!-- الاسم --></th>
-                    <th>{{ _("الوصف") }}</th>
+                    <th style="direction: rtl; text-align: right;">{{ _("الوصف") }}</th>
                     <th style="text-align: center;">{% if options.scoreboard_visibility != 'admins' %}{{ _("الالتقاطات") }}{% end %}</th>
                     {% if team and options.penalize_flag_value and not user.is_admin() %}
                         <th style="text-align: center;">{{ _("المحاولات") }}</th>
@@ -300,10 +300,10 @@
                         <td class="shortcolumn" style="vertical-align: middle;">{{ box.flags.index(flag) + 1 }}</td>
 
                         <!-- الاسم -->
-                        <td class="shortcolumn" style="vertical-align: middle; padding-right: 20px; font-weight: bold;">{{ flag.name }}</td>
+                        <td class="shortcolumn" style=" direction: rtl; text-align: right; padding-right: 20px; font-weight: bold;">{{ flag.name }}</td>
 
                         <!-- الوصف -->
-                        <td class="descriptioncol markdown" style="vertical-align: middle;">{{ flag.description }}</td>
+                        <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ flag.description }}</td>
 
                         <!-- الالتقاطات -->
                         <td class="shortcolumn centercolumn">{% if options.scoreboard_visibility != 'admins' %}{{ len(Flag.team_captures(flag.id)) }}{% end %}</td>
@@ -317,7 +317,7 @@
                         <td class="shortcolumn centercolumn">{% if options.banking %}${% end %}{{ flag.dynamic_value(team) }}</td>
 
                         <!-- التلميحات -->
-                        <td class="shortcolumn" style="text-align: center;">
+                        <td class="shortcolumn" style="direction: rtl; text-align: right;">
                             {% if team and not user.is_admin() %}
                                 {% if not flag in team.flags %}
                                     {% set i = 1 %}
@@ -368,7 +368,7 @@
                                 {% if user.is_admin() or flag in team.flags or hint in team.hints %}
                                     <tr {% if team and flag in team.flags %}class="flag-collapse" style="display: none;"{% end %}>
                                         <td class="hidehovercolor" style="background: green; margin: 0px; padding: 0px;"></td>
-                                        <td colspan="8" class="descriptioncol markdown">
+                                        <td colspan="8" class="descriptioncol markdown" style="direction: rtl; text-align: right;">
                                             <i class="fa fa-arrow-circle-up"></i> <strong>{{ _("تلميح") }} #{{ i }}:</strong> {{ hint.description }}
                                             {% if team and hint in team.hints %}<span style="float: left; color: green;">{{ _("تم الشراء") }}</span>{% end %}
                                         </td>
