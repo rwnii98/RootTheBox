@@ -108,36 +108,44 @@
                     </div>
                 {% end %}
                 
-                <div class="control-group">
-                    
-                    <div class="controls">
+               <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
                         <input required id="handle" name="handle" maxlength="16" minlength="3" placeholder="{{ _('الاسم المستعار') }}" type="text"
                             rel="popover" pattern="^[a-zA-Z0-9_\-\.]{3,16}$"
                             data-original-title="{{ _('الاسم المستعار') }}"
-                            data-content="{{ _('يجب أن يكون الاسم بين 3 إلى 16 حرفًا، ويمكن أن يحتوي على شرطة سفلية أو نقطة أو شرطة عادية.') }}" />
+                            data-content="{{ _('يجب أن يكون الاسم بين 3 إلى 16 حرفًا، ويمكن أن يحتوي على شرطة سفلية أو نقطة أو شرطة عادية.') }}"
+                            style="text-align: right;" />
                     </div>
-                    <label class="control-label" for="handle"><i class="fa fa-user"></i> {{ _("اسم المستخدم") }}</label>
+                    <label class="control-label" for="handle" style="font-weight: bold; font-size: 18px;">
+                        <i class="fa fa-user"></i> {{ _("اسم المستخدم") }}
+                    </label>
                 </div>
 
-                <div class="control-group">
-                    <label class="control-label" for="playername">{{ _("اسم اللاعب") }}</label>
-                    <div class="controls">
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
                         <input required id="playername" name="playername" maxlength="64" minlength="3" placeholder="{{ _('الاسم الكامل') }}" type="text"
                             rel="popover" pattern="^[a-zA-Z0-9 ]{3,64}$"
                             data-original-title="{{ _('اسم اللاعب') }}"
-                            data-content="{{ _('اسمك الظاهر للمسؤولين عن اللعبة. يجب أن يكون بين 3 و64 حرفًا أبجديًا أو رقميًا.') }}" />
+                            data-content="{{ _('اسمك الظاهر للمسؤولين عن اللعبة. يجب أن يكون بين 3 و64 حرفًا أبجديًا أو رقميًا.') }}"
+                            style="text-align: right;" />
                     </div>
+                    <label class="control-label" for="playername" style="font-weight: bold; font-size: 18px;">
+                        {{ _("اسم اللاعب") }}
+                    </label>
                 </div>
 
                 {% if options.require_email %}
-                <div class="control-group">
-                    <label class="control-label" for="email">{{ _("البريد الإلكتروني") }}</label>
-                    <div class="controls">
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
                         <input required id="email" name="email" maxlength="64" minlength="3" placeholder="{{ _('البريد الإلكتروني') }}" type="text"
                             rel="popover" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
                             data-original-title="{{ _('البريد الإلكتروني للاعب') }}"
-                            data-content="{{ _('بريدك الإلكتروني سيكون مرئيًا للمسؤولين فقط.') }}" />
+                            data-content="{{ _('بريدك الإلكتروني سيكون مرئيًا للمسؤولين فقط.') }}"
+                            style="text-align: right;" />
                     </div>
+                    <label class="control-label" for="email" style="font-weight: bold; font-size: 18px;">
+                        {{ _("البريد الإلكتروني") }}
+                    </label>
                 </div>
                 {% end %}
 
