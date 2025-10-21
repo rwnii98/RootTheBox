@@ -87,13 +87,13 @@
                 <div class="control-group">
                     <label class="control-label" for="corporation_name">{{ _("Name") }}</label>
                     <div class="controls">
-                        <input id="corporation-name" name="name" type="text" maxlength="32" placeholder="{{ _('Corporation Name') }}" />
+                        <input id="corporation-name" name="name" type="text" maxlength="32" placeholder="{{ _('Corporation Name') }}" style="direction: rtl; text-align: right;"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="corporation_description">{{ _("Description") }}</label>
                     <div class="controls">
-                        <textarea id="corporation-description" name="description" maxlength="512" type="text" placeholder="{{ _('Optional') }} {{ _('Description') }}"></textarea>
+                        <textarea id="corporation-description" name="description" maxlength="512" type="text" placeholder="{{ _('Optional') }} {{ _('Description') }}" style="direction: rtl; text-align: right;"></textarea>
                     </div>
                 </div>
             </form>
@@ -144,7 +144,7 @@
                 <div class="control-group">
                     <label class="control-label" for="box_name">{{ _("Box Name") }}</label>
                     <div class="controls">
-                        <input id="box-name" name="name" type="text" placeholder="{{ _('Box Name') }}" />
+                        <input id="box-name" name="name" type="text" placeholder="{{ _('Box Name') }}" style="direction: rtl; text-align: right;" />
                     </div>
                 </div>
                 <div class="control-group">
@@ -156,7 +156,7 @@
                 <div class="control-group">
                     <label class="control-label" for="game_level">{{_("Game Level")}}</label>
                     <div class="controls">
-                        <select id="edit-box-game-level" name="game_level">
+                        <select id="edit-box-game-level" name="game_level" style="direction: rtl; text-align: right;">
                             {% for level in GameLevel.all() %}
                             <option value="{{ level.uuid }}">{{ level.name }}</option>
                             {% end %}
@@ -166,7 +166,7 @@
                 <div class="control-group">
                     <label class="control-label" for="box_corporation">{{ _("Corporation") }}</label>
                     <div class="controls">
-                        <select id="edit-box-corporation" name="corporation_uuid">
+                        <select id="edit-box-corporation" name="corporation_uuid" style="direction: rtl; text-align: right;">
                             {% for corporation in Corporation.all() %}
                                 <option value="{{ corporation.uuid }}">{% if corporation.name != "" %}{{ corporation.name }}{% else %}({{ _("No name") }}){% end %}</option>
                             {% end %}
@@ -176,7 +176,7 @@
                 <div class="control-group">
                     <label class="control-label" for="box_catetory">{{ _("Category") }}</label>
                     <div class="controls">
-                        <select id="edit-box-category" name="category_uuid">
+                        <select id="edit-box-category" name="category_uuid" style="direction: rtl; text-align: right;">
                             <option value=""></option>
                             {% for category in Category.all() %}
                                 <option value="{{ category.uuid }}">{{ category.category }}</option>
@@ -215,13 +215,13 @@
                 <div class="control-group">
                     <label class="control-label" for="box_description">{{_("Description")}}</label>
                     <div class="controls">
-                        <textarea rows="4" class="toolbar" id="box-description" name="description" placeholder="{{_('Description')}}" ></textarea>
+                        <textarea rows="4" class="toolbar" id="box-description" name="description" placeholder="{{_('Description')}}" style="direction: rtl; text-align: right;"></textarea>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="box_difficulty">{{_("Difficulty")}}</label>
                     <div class="controls">
-                        <input id="box-difficulty" name="difficulty" type="text" placeholder="{{_('Difficulty Rating')}}" />
+                        <input id="box-difficulty" name="difficulty" type="text" placeholder="{{_('Difficulty Rating')}}" style="direction: rtl; text-align: right;"/>
                     </div>
                 </div>
                 <div class="control-group">
@@ -257,7 +257,7 @@
                 <div class="control-group">
                     <label class="control-label" for="box-capture_message">{{_("Capture Message")}}</label>
                     <div class="controls">
-                        <textarea rows="4" id="box-capture_message" name="capture_message" placeholder="({{_('Optional')}}">
+                        <textarea rows="4" id="box-capture_message" name="capture_message" placeholder="{{_('Optional')}}">
                         </textarea>
                     </div>
                 </div>
@@ -327,7 +327,7 @@
                 <div class="control-group">
                     <label class="control-label" for="edit-flag-type">{{_("Flag Type")}}</label>
                     <div class="controls">
-                        <select id="edit-flag-type" name="flag_type" style="direction: rtl; text-align: right;">
+                        <select id="edit-flag-type" name="flag_type">
                             {% for item in FLAG_TYPES %}
                                 <option id="edit-type-{{item}}" class="typeoption" value="{{ item }}">
                                     {{ item }}
