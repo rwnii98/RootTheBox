@@ -156,8 +156,12 @@
                         <div style="direction: rtl; text-align: right;">
                             <input type="radio" class="teammode" name="teammode" value="join" checked>
                             <h5 style="display: inline;">{{ _("الانضمام إلى فريق موجود") }}</h5>
-                            <input type="radio" class="teammode" name="teammode" value="create">
-                            <h5 style="display: inline;">{{ _("إنشاء فريق جديد") }}</h5>
+                            <!-- <input type="radio" class="teammode" name="teammode" value="create">
+                            <h5 style="display: inline;">{{ _("إنشاء فريق جديد") }}</h5> -->
+                            <h5 style="direction: rtl; text-align: right;">
+                                ملاحظة: يجب على المجموعات من <strong>5 إلى 8</strong> استخدام الرمز <strong>"code1"</strong>،  
+                                ويجب على المجموعات من <strong>9 إلى 12</strong> استخدام الرمز <strong>"code2"</strong>.
+                            </h5>
                         </div>
                         <br/><br/>
 
@@ -219,8 +223,6 @@
                         </label>
                     </div>
                 {% end %}
-
-                <hr style="margin-right: 400px;">
 
                 <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
                     <div class="controls" style="flex: 1;">
