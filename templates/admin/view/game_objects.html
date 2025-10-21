@@ -976,7 +976,7 @@
                                                         <tr>
                                                             <td class="shortcolumn">{{ index + 1 }}</td>
                                                             <td class="shortcolumn" style="text-align: center;">{% if options.banking %}{{ _("$") }}{% end %}{{ hint.price }}</td>
-                                                            <td class="shortcolumn flagname" style="padding-right: 25px;">{{ Flag.by_id(hint.flag_id).name }}</td>
+                                                            <td class="shortcolumn flagname" style="direction: rtl; text-align: right;">{{ Flag.by_id(hint.flag_id).name }}</td>
                                                             <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ hint.description }}</td>
                                                             <td class="shortcolumn">
                                                                 <a id="edit-hint-button-{{ hint.uuid }}" class="btn btn-mini" data-toggle="modal" href="#edit-hint-modal" data-uuid="{{ hint.uuid }}" data-box-uuid="{{ hint.box.uuid }}">
@@ -1040,23 +1040,23 @@
                                     <div class="startips">
                                         <h4 style="display:inline;">
                                             <i class="fa fa-fw fa-globe"></i>
-                                            {{_("عنوان الشبكة (IP)")}}&nbsp;&nbsp;
+                                            {{ _("عنوان الشبكة (IP)") }}&nbsp;&nbsp;
                                         </h4>
                                         <a id="add-ip-address-button-{{ box.uuid }}" class="btn btn-primary btn-mini" data-toggle="modal" href="#add-ip-address-modal" data-uuid="{{ box.uuid }}">
                                             <i class="fa fa-fw fa-plus"></i>
-                                            {{_("إضافة عنوان الشبكة")}}
+                                            {{ _("إضافة عنوان الشبكة") }}
                                         </a>
                                         <br />
                                         <hr>
                                         {% if len(box.ip_addresses) != 0 %}
-                                            <table class="table table-striped">
+                                            <table class="table table-striped" style="direction: rtl; text-align: right;">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>{{_("Address")}}</th>
-                                                        <th>{{_("IP Version")}}</th>
-                                                        <th>{{_("Visible")}}</th>
-                                                        <th><!-- Delete --></th>
+                                                        <th>{{ _("العنوان") }}</th>
+                                                        <th>{{ _("نسخة IP") }}</th>
+                                                        <th>{{ _("مرئي") }}</th>
+                                                        <th><!-- حذف --></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1065,11 +1065,11 @@
                                                             <td>{{ index + 1 }}</td>
                                                             <td>{{ ip.address }}</td>
                                                             <td>{{ ip.version }}</td>
-                                                            <td>{% if ip.visible %} {{_("Yes")}} {% else %} {{_("No")}} {% end %}</td>
+                                                            <td>{% if ip.visible %} {{ _("نعم") }} {% else %} {{ _("لا") }} {% end %}</td>
                                                             <td class="shortcolumn">
                                                                 <a id="delete-ip-address-button-{{ ip.uuid }}" class="btn btn-danger btn-mini" data-toggle="modal" href="#delete-ip-address-modal" data-uuid="{{ ip.uuid }}">
                                                                     <i class="fa fa-fw fa-times-circle-o"></i>
-                                                                    {{_("Delete")}}
+                                                                    {{ _("حذف") }}
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -1079,6 +1079,7 @@
                                         {% end %}
                                     </div>
                                     <!-- End IPs -->
+
                                 </div>
                             {% end %}
                         {% else %}
