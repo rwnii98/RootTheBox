@@ -84,9 +84,6 @@
         {% end %}
         <div class="{% if len(avatars) == 0 %}span8 offset1 {% end %}well" style="position: relative; direction: rtl; text-align: right;">
         {% if not suspend %}
-            <legend>
-                {{ _("مرحبًا بك في المشهد") }}
-            </legend>
             <form class="form-horizontal" action="/registration" method="post" enctype="multipart/form-data">
                 {% raw xsrf_form_html() %}
                 {% if len(avatars) > 0 %}
