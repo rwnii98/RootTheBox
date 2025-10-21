@@ -23,14 +23,14 @@
 <div class="row-fluid">
     <div class="span6">
         <div class="row">
-            <div class="span11 offset1 well">
+           <div class="span11 offset1 well" style="direction: rtl; text-align: right;">
                 <h2 style="padding-bottom: 8px;">
                     <i class="fa fa-user"></i> {{ user.handle }} 
                 </h2>
                 <span style="float: right; margin-top: -63px; text-align: center;">
                     <table>
                         <tr>
-                            {% if options.teams %}<td>{{ _("Player Score") }}</td>{% end %}{% if scoreboard_visible %}<td style="padding-left: 20px;">Rank</td>{% end %}
+                            {% if options.teams %}<td>{{ _("نقاط اللاعب") }}</td>{% end %}{% if scoreboard_visible %}<td style="padding-left: 20px;">الترتيب</td>{% end %}
                         </tr>
                         <tr>
                             {% if options.teams %}<td><h4 style="margin-top: 0;">{% if options.banking %}${% end %}{{ user.money }} &bull; {{ len(user.flags) }} <i class="fa fa-flag-o"></i><h4></td>{% end %}{% if scoreboard_visible %}<td style="padding-left: 20px;"><h4 style="margin-top: 0;">{{ rank }}<h4></td>{% end %}
@@ -50,16 +50,16 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th><h5 style="display: inline;">{% if options.teams %}{{ _("Team") }}{% else %}{{ _("Player") }}{% end %}</h5></th>
-                                <th style="text-align: center;"><h5 style="display: inline;">{{ _("Current Level") }}</h5></th>
+                                <th><h5 style="display: inline;">{% if options.teams %}{{ _("الفريق") }}{% else %}{{ _("اللاعب") }}{% end %}</h5></th>
+                                <th style="text-align: center;"><h5 style="display: inline;">{{ _("المستوى الحالي") }}</h5></th>
                                 {% if options.use_bots %}
-                                    <th style="text-align: center;"><h5 style="display: inline;">{{ _("Active Bots") }}</h5></th>
+                                    <th style="text-align: center;"><h5 style="display: inline;">{{ _("البوتات النشطة") }}</h5></th>
                                 {% end %}
                                 {% if hintcount > 0 %}
-                                <th style="text-align: center;"><h5 style="display: inline;">{{ _("Hints Taken") }}</h5></th>
+                                    <th style="text-align: center;"><h5 style="display: inline;">{{ _("التلميحات المستخدمة") }}</h5></th>
                                 {% end %}
-                                <th style="text-align: center;"><h5 style="display: inline;">{{ _("Flags Captured") }}</h5></th>
-                                <th style="text-align: right;"><h5 style="display: inline;">{% if options.banking %}{{ _("Bank Account") }}{% else %}{{ _("Score") }}{% end %}</h5></th>
+                                <th style="text-align: center;"><h5 style="display: inline;">{{ _("الأعلام التي تم الحصول عليها") }}</h5></th>
+                                <th style="text-align: right;"><h5 style="display: inline;">{% if options.banking %}{{ _("الحساب البنكي") }}{% else %}{{ _("النقاط") }}{% end %}</h5></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,9 +82,10 @@
                         </tbody>
                     </table>
                 {% else %}
-                    <strong>{{ _("You are not on a team") }}</strong>
+                    <strong>{{ _("أنت لست ضمن أي فريق") }}</strong>
                 {% end %}
             </div>
+
             
         </div>
         {% if len(Category.all()) > 2 %}
