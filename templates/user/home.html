@@ -235,21 +235,21 @@
     </div>
 
     {% if options.teams and team and not visitor %}
-    <div class="span5 well" style="width: 46%;">
-        <h2>
-            <i class="fa fa-group"></i>
-            {{ _("Team Information") }}
-        </h2>
-        <hr>      
-        <div class="row">
-            <div class="span1 offset1" style="text-align: center; padding-top: 5px;">
-                <i class="fa fa-key" style="font-size: 180%;"></i>
-            </div>
-            <div class="span7 msgdescription">
-                    {{ team.code }}<br>{{ _("Share your team code to allow other players to join") }} {{ team.name }}.
+        <div class="span5 well" style="width: 46%; direction: rtl; text-align: right;">
+            <h2>
+                <i class="fa fa-group"></i>
+                {{ _("معلومات الفريق") }}
+            </h2>
+            <hr>      
+            <div class="row">
+                <div class="span1 offset1" style="text-align: center; padding-top: 5px;">
+                    <i class="fa fa-key" style="font-size: 180%;"></i>
+                </div>
+                <div class="span7 msgdescription">
+                        {{ team.code }}<br>{{ _("شارك كود فريقك للسماح للاعبين الآخرين بالانضمام إلى") }} {{ team.name }}.
+                </div>
             </div>
         </div>
-    </div>
     {% end %}
 
     <div class="span5 well" style="width: 46%;">
