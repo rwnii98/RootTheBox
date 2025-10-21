@@ -82,179 +82,187 @@
                 </div>
             {% end %}
         {% end %}
-        <div class="{% if len(avatars) == 0 %}span8 offset1 {% end %}well" style="position: relative;">
+        <div class="{% if len(avatars) == 0 %}span8 offset1 {% end %}well" style="position: relative; direction: rtl; text-align: right;">
         {% if not suspend %}
             <legend>
-                {{ _("Welcome to the Scene") }}
-            </legend><!-- http://www.youtube.com/watch?v=xIs_5nfJKu4&list=PLC2FCB2871C396459 -->
+                {{ _("مرحبًا بك في المشهد") }}
+            </legend>
             <form class="form-horizontal" action="/registration" method="post" enctype="multipart/form-data">
                 {% raw xsrf_form_html() %}
                 {% if len(avatars) > 0 %}
                     {% set avatarimg = get_new_avatar("user", not options.teams) %}
                     <div class="control-group" style="float: right; position: absolute; right: 30px; top: 40px;">
                         <img id="avatarimage" src="/avatars/{{avatarimg}}" class="img-polaroid" style="width: 350px; height: 175px; object-fit: cover"/>
-                        <div class="controls" style="margin-top: 15px; margin-left: 0px;">
+                        <div class="controls" style="margin-top: 15px; margin-right: 0px;">
                             <input id="user_avatar_select" name="user_avatar_select" type="hidden" value="{{avatarimg}}" />
-                            {% if len(avatars) > 0 %}<a data-toggle="modal" class="btn btn-primary" href="#change-user-avatar-modal"> {{ _("Select New Avatar") }} </a>&nbsp;&nbsp;{% end %}
-                            <a id="uploadbutton" class="btn btn-primary" href="#">{{ _("Upload Avatar") }}</a>&nbsp;&nbsp;(w500 x h250)
+                            {% if len(avatars) > 0 %}
+                                <a data-toggle="modal" class="btn btn-primary" href="#change-user-avatar-modal">{{ _("اختيار صورة رمزية جديدة") }}</a>&nbsp;&nbsp;
+                            {% end %}
+                            <a id="uploadbutton" class="btn btn-primary" href="#">{{ _("رفع الصورة الرمزية") }}</a>&nbsp;&nbsp;(عرض 500 × ارتفاع 250)
                             <input id="user-avatar" name="avatar" type="file" accept="image/bmp,image/jpeg,image/gif,image/png" style="display: none;"/>
                         </div>
                         {% if options.use_recaptcha %}
-                        <br>
-                        {% module Recaptcha() %}
+                            <br>
+                            {% module Recaptcha() %}
                         {% end %}
                     </div>
-                    
                 {% end %}
+                
                 <div class="control-group">
-                    <label class="control-label" for="handle">
-                        <i class="fa fa-user"></i>
-                        {{ _("Handle") }}
-                    </label>
+                    <label class="control-label" for="handle"><i class="fa fa-user"></i> {{ _("اسم المستخدم") }}</label>
                     <div class="controls">
-                        <input required id="handle" name="handle" maxlength="16" minlength="3" placeholder="{{ _('Player Alias') }}" type="text"
+                        <input required id="handle" name="handle" maxlength="16" minlength="3" placeholder="{{ _('الاسم المستعار') }}" type="text"
                             rel="popover" pattern="^[a-zA-Z0-9_\-\.]{3,16}$"
-                            data-original-title="{{ _('Player Alias') }}"
-                            data-content="{{_('Your handle must be 3-16 alphanumeric characters.  Underscore, dash, and dots allowed.')}}" />
+                            data-original-title="{{ _('الاسم المستعار') }}"
+                            data-content="{{ _('يجب أن يكون الاسم بين 3 إلى 16 حرفًا، ويمكن أن يحتوي على شرطة سفلية أو نقطة أو شرطة عادية.') }}" />
                     </div>
                 </div>
+
                 <div class="control-group">
-                    <label class="control-label" for="playername">
-                        {{ _("Player Name") }}
-                    </label>
+                    <label class="control-label" for="playername">{{ _("اسم اللاعب") }}</label>
                     <div class="controls">
-                        <input required id="playername" name="playername" maxlength="64" minlength="3" placeholder="{{_('Name')}}" type="text"
+                        <input required id="playername" name="playername" maxlength="64" minlength="3" placeholder="{{ _('الاسم الكامل') }}" type="text"
                             rel="popover" pattern="^[a-zA-Z0-9 ]{3,64}$"
-                            data-original-title="{{ _('Player Name') }}"
-                            data-content="{{_('Your name, visible to game administrators.  Your name can be 3-64 alphanumeric characters')}}" />
+                            data-original-title="{{ _('اسم اللاعب') }}"
+                            data-content="{{ _('اسمك الظاهر للمسؤولين عن اللعبة. يجب أن يكون بين 3 و64 حرفًا أبجديًا أو رقميًا.') }}" />
                     </div>
                 </div>
+
                 {% if options.require_email %}
                 <div class="control-group">
-                    <label class="control-label" for="email">
-                        {{ _("Email") }}
-                    </label>
+                    <label class="control-label" for="email">{{ _("البريد الإلكتروني") }}</label>
                     <div class="controls">
-                        <input required id="email" name="email" maxlength="64" minlength="3" placeholder="{{ _('Email') }}" type="text"
+                        <input required id="email" name="email" maxlength="64" minlength="3" placeholder="{{ _('البريد الإلكتروني') }}" type="text"
                             rel="popover" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
-                            data-original-title="{{_('Player Email')}}"
-                            data-content="{{_('Your email, visible to game administrators.')}}" />
+                            data-original-title="{{ _('البريد الإلكتروني للاعب') }}"
+                            data-content="{{ _('بريدك الإلكتروني سيكون مرئيًا للمسؤولين فقط.') }}" />
                     </div>
                 </div>
                 {% end %}
-                <hr style="margin-right: 400px;">
+
+                <hr style="margin-left: 400px;">
+
                 {% if options.teams %}
                     {% if options.public_teams %}
-                        <input type="radio" class="teammode" name="teammode" value="join" checked><h5 style="display: inline;">{{ _("Join Existing Team") }}</h5>
-                        <input type="radio" class="teammode" name="teammode" value="create"><h5 style="display: inline;">{{ _("Start a New Team") }}</h5>
+                        <input type="radio" class="teammode" name="teammode" value="join" checked><h5 style="display: inline;">{{ _("الانضمام إلى فريق موجود") }}</h5>
+                        <input type="radio" class="teammode" name="teammode" value="create"><h5 style="display: inline;">{{ _("إنشاء فريق جديد") }}</h5>
                         <br/><br/>
+
                         <div id="teammode-create" style="display: none;">
                             <div class="control-group">
-                                <label class="control-label" for="team_name">{{ _("Team Name") }}</label>
+                                <label class="control-label" for="team_name">{{ _("اسم الفريق") }}</label>
                                 <div class="controls">
-                                    <input id="team-name" name="team_name" maxlength="24" minlength="3" type="text" placeholder="{{ _('Team Name') }}"
+                                    <input id="team-name" name="team_name" maxlength="24" minlength="3" type="text" placeholder="{{ _('اسم الفريق') }}"
                                         rel="popover" pattern="^[a-zA-Z0-9 _\-\.]{3,24}$"
-                                        data-original-title="{{_('New Team Name')}}"
-                                        data-content="{{_('Choose a name for your new team!')}} [3-24 {{_('Characters')}}]" >
+                                        data-original-title="{{ _('اسم الفريق الجديد') }}"
+                                        data-content="{{ _('اختر اسمًا لفريقك الجديد!') }} [3-24 {{ _('حرف') }}]" >
                                 </div>
                             </div>
+
                             <div class="control-group">
-                                <label class="control-label" for="motto">{{ _("Motto") }}</label>
+                                <label class="control-label" for="motto">{{ _("الشعار") }}</label>
                                 <div class="controls">
-                                    <input id="motto" name="motto" maxlength="32" type="text" placeholder="{{ _('Team Motto') }}"
+                                    <input id="motto" name="motto" maxlength="32" type="text" placeholder="{{ _('شعار الفريق') }}"
                                         rel="popover" pattern="^[a-zA-Z0-9 _\-\.]{,32}$"
-                                        data-original-title="{{_('Team Motto')}}"
-                                        data-content="{{_('Optional')}}: {{_('What is your teams motto?')}} [{{ _('Max') }}: 32 {{_('Characters')}}]">
+                                        data-original-title="{{ _('شعار الفريق') }}"
+                                        data-content="{{ _('اختياري') }}: {{ _('ما هو شعار فريقك؟') }} [{{ _('الحد الأقصى') }}: 32 {{ _('حرف') }}]">
                                 </div>
                             </div>
                         </div>
                     {% else %}
-                        <h5 style="margin-left: 20px; margin-bottom: 15px;">{{ _("Join Existing Team") }}</h5>
+                        <h5 style="margin-right: 20px; margin-bottom: 15px;">{{ _("الانضمام إلى فريق موجود") }}</h5>
                     {% end %}
+
                     <div id="teammode-join" class="control-group">
-                        <label class="control-label" for="team-code">{{ _("Team Code") }}</label>
+                        <label class="control-label" for="team-code">{{ _("رمز الفريق") }}</label>
                         <div class="controls">
-                            <input id="team-code" name="team-code" type="text" placeholder="{{ _('Team Code') }}"
+                            <input id="team-code" name="team-code" type="text" placeholder="{{ _('رمز الفريق') }}"
                                 rel="popover"
-                                data-original-title="{{_('Team Code')}}"
-                                data-content="{{_('Provide the code used to join an existing team.  Visible to other team members on their home page.')}}" >
+                                data-original-title="{{ _('رمز الفريق') }}"
+                                data-content="{{ _('أدخل الرمز المستخدم للانضمام إلى الفريق الموجود. يظهر هذا الرمز لأعضاء الفريق في صفحتهم الرئيسية.') }}" >
                         </div>
                     </div>
                 {% else %}
                     <div class="control-group">
-                        <label class="control-label" for="motto">{{ _("Motto") }}</label>
+                        <label class="control-label" for="motto">{{ _("الشعار") }}</label>
                         <div class="controls">
-                            <input id="motto" name="motto" maxlength="32" type="text" placeholder="{{ _('Motto') }}"
+                            <input id="motto" name="motto" maxlength="32" type="text" placeholder="{{ _('الشعار') }}"
                                 rel="popover" pattern="^[a-zA-Z0-9_\-\.]{,32}$"
-                                data-original-title="{{_('Motto')}}"
-                                data-content="{{_('Optional')}}: {{_('What is your motto?')}} [{{ _('Max') }}: 32 {{_('Characters')}}]">
+                                data-original-title="{{ _('الشعار') }}"
+                                data-content="{{ _('اختياري') }}: {{ _('ما هو شعارك؟') }} [{{ _('الحد الأقصى') }}: 32 {{ _('حرف') }}]">
                         </div>
                     </div>
                 {% end %}
-                <hr style="margin-right: 400px;">
+
+                <hr style="margin-left: 400px;">
+
                 <div class="control-group">
-                    <label class="control-label" for="pass1">{{ _("Account Password") }}</label>
+                    <label class="control-label" for="pass1">{{ _("كلمة مرور الحساب") }}</label>
                     <div class="controls">
-                        <input required id="pass1" name="pass1" minlength="{{ options.min_user_password_length }}"  placeholder="{{ _('Password') }}" type="password"
+                        <input required id="pass1" name="pass1" minlength="{{ options.min_user_password_length }}" placeholder="{{ _('كلمة المرور') }}" type="password"
                             autocomplete="off"
                             rel="popover"
-                            data-original-title="{{_('Password')}}"
-                            data-content="{{_('Enter a complex password of')}} {{ options.min_user_password_length }}+ {{_('Characters')}}" />
+                            data-original-title="{{ _('كلمة المرور') }}"
+                            data-content="{{ _('أدخل كلمة مرور معقدة بطول لا يقل عن') }} {{ options.min_user_password_length }} {{ _('حروف') }}" />
                     </div>
                 </div>
+
                 <div class="control-group">
-                    <label class="control-label" for="pass2">{{ _("Confirm Account Password") }}</label>
+                    <label class="control-label" for="pass2">{{ _("تأكيد كلمة المرور") }}</label>
                     <div class="controls">
-                        <input required id="pass2" name="pass2" minlength="{{ options.min_user_password_length }}"  placeholder="{{ _('Confirm Password') }}" type="password"
+                        <input required id="pass2" name="pass2" minlength="{{ options.min_user_password_length }}" placeholder="{{ _('تأكيد كلمة المرور') }}" type="password"
                             autocomplete="off"
                             rel="popover"
-                            data-original-title="{{_('Confirm Password')}}"
-                            data-content="{{_('Enter the same password as before')}}" />
+                            data-original-title="{{ _('تأكيد كلمة المرور') }}"
+                            data-content="{{ _('أدخل نفس كلمة المرور السابقة') }}" />
                     </div>
                 </div>
+
                 {% if options.banking and not set(["Password Security", "Federal Reserve"]).isdisjoint(options.allowed_market_items) %}
-					<div class="control-group">
-						<label class="control-label" for="bpass1">{{ _("Bank Account Password") }}</label>
-						<div class="controls">
-							<input required id="bpass" name="bpass" maxlength="{{ options.max_password_length }}" placeholder="{{ _('Bank Account Password') }}" type="password"
-								autocomplete="off"
-								rel="popover"
-								data-original-title="{{_('Password')}}"
-								data-content="{{_('Used to secure your (in-game) bank account.')}} [{{ _('Max') }}: {{ options.max_password_length }} {{_('Characters')}}].  {{_('Please do NOT enter your real bank account password.')}}" />
-						</div>
-					</div>
+                    <div class="control-group">
+                        <label class="control-label" for="bpass1">{{ _("كلمة مرور الحساب البنكي") }}</label>
+                        <div class="controls">
+                            <input required id="bpass" name="bpass" maxlength="{{ options.max_password_length }}" placeholder="{{ _('كلمة مرور الحساب البنكي') }}" type="password"
+                                autocomplete="off"
+                                rel="popover"
+                                data-original-title="{{ _('كلمة المرور') }}"
+                                data-content="{{ _('تُستخدم لحماية حسابك البنكي داخل اللعبة.') }} [{{ _('الحد الأقصى') }}: {{ options.max_password_length }} {{ _('حرف') }}]. {{ _('لا تُدخل كلمة مرور حسابك البنكي الحقيقي!') }}" />
+                        </div>
+                    </div>
                 {% end %}
+
                 {% if options.restrict_registration %}
                     <div class="control-group">
-                        <label class="control-label" for="token">{{ _("Registration Token") }}</label>
+                        <label class="control-label" for="token">{{ _("رمز التسجيل") }}</label>
                         <div class="controls">
-                            <input required id="regtoken" name="token" placeholder="{{ _('Token') }}" type="text"
+                            <input required id="regtoken" name="token" placeholder="{{ _('الرمز') }}" type="text"
                                 rel="popover" pattern="^[a-fA-F0-9]{1,6}$"
-                                data-original-title="{{_('Registration Token')}}"
-                                data-content="{{_('Get your registration token from reception')}}" />
+                                data-original-title="{{ _('رمز التسجيل') }}"
+                                data-content="{{ _('احصل على رمز التسجيل من مكتب الاستقبال.') }}" />
                         </div>
                     </div>
                 {% end %}
+
                 {% if options.privacy_policy_link %}
                     <div class="control-group">
-                        <label class="control-label" for="privacy_policy_accept">{{ _("I accept the") }} <a href="{{ options.privacy_policy_link }}">{{ _("Privacy Policy") }}</a></label>
+                        <label class="control-label" for="privacy_policy_accept">{{ _("أوافق على") }} <a href="{{ options.privacy_policy_link }}">{{ _("سياسة الخصوصية") }}</a></label>
                         <div class="controls">
                             <input required id="privacy_policy_accept" name="privacy_policy_accept" type="checkbox" />
                         </div>
                     </div>
                 {% end %}
+
                 <br />
                 <div class="control-group">
                     <div class="controls">
-                        <button class="btn btn-primary" type="submit">
-                            {{ _("Register Account") }}
-                        </button>
+                        <button class="btn btn-primary" type="submit">{{ _("تسجيل الحساب") }}</button>
                     </div>
                 </div>
             </form>
         {% else %}
-            <h4 style="text-align: center;"><i class="fa fa-group"></i>&nbsp;&nbsp;{{ _("The game is not accepting new players at this time.") }}</h4>
+            <h4 style="text-align: center;"><i class="fa fa-group"></i>&nbsp;&nbsp;{{ _("اللعبة لا تقبل لاعبين جدد في الوقت الحالي.") }}</h4>
         {% end %}
         </div>
+
     </div>
 {% end %}
