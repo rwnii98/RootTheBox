@@ -339,11 +339,11 @@
         </div>
 
         {% if options.teams %}
-        
-        <div class="span5 well" style="width: 46%;">
+
+        <div class="span5 well" style="width: 46%; direction: rtl; text-align: right;">
             <h2>
                 <i class="fa fa-flag"></i> 
-                {{ _("Player") }} {{ _("Mission Progress") }}
+                {{ _("تقدم مهمة اللاعب") }}
             </h2>
             <hr style="margin-bottom: 8px;">
             {% if game_started %}
@@ -370,7 +370,7 @@
                             <hr style="margin: 5px 0;">
                             {% for box in sorted(level.unlocked_boxes()) %}
                                 {% if not box.locked and len(box.flags) > 0 %}
-                                <div class="row" style="margin-left: 16px;">
+                                <div class="row" style="margin-right: 16px;">
                                     <div class="span4">
                                         <a href="/user/missions/boxes?uuid={{ box.uuid }}">
                                             <h5 style="display: inline;">
@@ -420,13 +420,14 @@
                         <i class="fa fa-pause" style="font-size: 120%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-                            {{ _("Waiting for the game to start...") }}
+                            {{ _("في انتظار بدء اللعبة...") }}
                     </div>
                 </div>
             {% end %}
         </div>
 
-        {% end %} 
+        {% end %}
+
 
 
     
