@@ -355,7 +355,7 @@
                                         <a id="capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{%end%}-flag-button{{ index }}" class="btn btn-mini" data-toggle="modal" href="#capture-{% if flag.is_file %}file{% elif flag.type == FLAG_CHOICE %}choice{% else %}text{% end %}-flag-modal" 
                                         data-uuid="{{ flag.uuid }}" data-choices='{{ str(flag.choicelist()) }}'>
                                             <i class="fa fa-flag"></i>
-                                            {{ _("Submit") }}
+                                            {{ _("إرسال") }}
                                         </a>
                                         {% end %}
                                     </td>
