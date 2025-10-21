@@ -311,13 +311,13 @@
                 <div class="control-group">
                     <label class="control-label" for="flag-name">{{_("Flag Name")}}</label>
                     <div class="controls">
-                        <input id="flag-name" maxlength="64" name="name" type="text" placeholder="({{_('Optional')}}" />
+                        <input id="flag-name" maxlength="64" name="name" type="text" placeholder="{{_('Optional')}}" style="direction: rtl; text-align: right;" />
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="edit-flag-box">{{_("Box")}}</label>
                     <div class="controls">
-                        <select id="edit-flag-box" name="box_uuid">
+                        <select id="edit-flag-box" name="box_uuid" style="direction: rtl; text-align: right;">
                             {% for box in sorted(Box.all()) %}
                                 <option value="{{ box.uuid }}">{{ box.name }}</option>
                             {% end %}
@@ -327,7 +327,7 @@
                 <div class="control-group">
                     <label class="control-label" for="edit-flag-type">{{_("Flag Type")}}</label>
                     <div class="controls">
-                        <select id="edit-flag-type" name="flag_type">
+                        <select id="edit-flag-type" name="flag_type" style="direction: rtl; text-align: right;">
                             {% for item in FLAG_TYPES %}
                                 <option id="edit-type-{{item}}" class="typeoption" value="{{ item }}">
                                     {{ item }}
@@ -345,7 +345,7 @@
                 <div class="control-group">
                     <label class="control-label" for="flag-description">{{_("Description")}}</label>
                     <div class="controls">
-                        <textarea rows="4" class="toolbar" id="flag-description" name="description" type="text" placeholder="{{_('Description')}}"></textarea>
+                        <textarea rows="4" class="toolbar" id="flag-description" name="description" type="text" placeholder="{{_('Description')}}" style="direction: rtl; text-align: right;"></textarea>
                     </div>
                 </div>
                 <div id="casegroup" class="control-group">
@@ -472,13 +472,13 @@
                 <div class="control-group">
                     <label class="control-label" for="hint-description">{{_("Description")}}</label>
                     <div class="controls">
-                        <textarea rows="4" class="toolbar" id="hint-description" name="description" type="text" maxlength="4096" placeholder="{{_('Description')}}"></textarea>
+                        <textarea rows="4" class="toolbar" id="hint-description" name="description" type="text" maxlength="4096" placeholder="{{_('Description')}}" style="direction: rtl; text-align: right;"></textarea>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="hint-flag_uuid">{{_("Flag")}}</label>
                     <div class="controls">
-                        <select id="hint-flag_uuid" name="hint-flag_uuid"></select>
+                        <select id="hint-flag_uuid" name="hint-flag_uuid" style="direction: rtl; text-align: right;" ></select>
                     </div>
                 </div>
             </form>
