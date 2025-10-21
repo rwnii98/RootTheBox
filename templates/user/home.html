@@ -27,16 +27,27 @@
                 <h2 style="padding-bottom: 8px; text-align: left;">
                     <i class="fa fa-user"></i> {{ user.handle }} 
                 </h2>
-                <span style="float: right; margin-top: -63px; text-align: center;">
+                <span style="float: right; margin-top: -63px; text-align: center; direction: rtl;">
                     <table>
                         <tr>
-                            {% if options.teams %}<td>{{ _("Player Score") }}</td>{% end %}{% if scoreboard_visible %}<td style="padding-left: 20px;">Rank</td>{% end %}
+                            {% if options.teams %}<td style="padding-right: 20px;">{{ _("نقاط اللاعب") }}</td>{% end %}
+                            {% if scoreboard_visible %}<td style="padding-right: 20px;">{{ _("الترتيب") }}</td>{% end %}
                         </tr>
                         <tr>
-                            {% if options.teams %}<td><h4 style="margin-top: 0;">{% if options.banking %}${% end %}{{ user.money }} &bull; {{ len(user.flags) }} <i class="fa fa-flag-o"></i><h4></td>{% end %}{% if scoreboard_visible %}<td style="padding-left: 20px;"><h4 style="margin-top: 0;">{{ rank }}<h4></td>{% end %}
+                            {% if options.teams %}
+                                <td style="padding-right: 20px;">
+                                    <h4 style="margin-top: 0;">{% if options.banking %}${% end %}{{ user.money }} &bull; {{ len(user.flags) }} <i class="fa fa-flag-o"></i></h4>
+                                </td>
+                            {% end %}
+                            {% if scoreboard_visible %}
+                                <td style="padding-right: 20px;">
+                                    <h4 style="margin-top: 0;">{{ rank }}</h4>
+                                </td>
+                            {% end %}
                         </tr>
                     </table>
                 </span>
+
                 <center>
                     {% if options.teams or not team %}
                         <img src="/avatars/{{ user.avatar }}" class="img-polaroid" />
