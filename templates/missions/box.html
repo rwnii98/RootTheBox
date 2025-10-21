@@ -25,15 +25,15 @@
     <div id="capture-text-flag-modal" class="modal hide fade" style="display: none;">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h3>{{ _("Submit Flag") }}</h3>
+            <h3>{{ _("إرسال العلم") }}</h3>
         </div>
         <div class="modal-body">
             <form id="capture-text-flag-form" class="form-horizontal" method="post" action="/user/missions/boxes?uuid={{ box.uuid }}">
                 {% raw xsrf_form_html() %}
                 <input id="capture-text-flag-uuid" name="uuid" value="" type="hidden" />
                 <br />
-                <div class="control-group">
-                    <label class="control-label" for="flag-token">{{ _("Flag") }}</label>
+                <div class="control-group" style="direction: rtl; text-align: right;">
+                    <label class="control-label" for="flag-token">{{ _("علم") }}</label>
                     <div class="controls">
                         <input autofocus required id="flag-token" name="token" type="text" placeholder="{{ _('Flag') }}" autocomplete="off" />
                     </div>
@@ -41,9 +41,9 @@
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#" class="btn" data-dismiss="modal">{{ _("Close") }}</a>
+            <a href="#" class="btn" data-dismiss="modal">{{ _("إغلاق") }}</a>
             <button id="capture-text-flag-submit" class="btn btn-primary" type="button">
-                {{ _("Submit") }}
+                {{ _("إرسال") }}
             </button>
         </div>
     </div>
@@ -167,7 +167,7 @@
             {% for error in errors %}
                 <div class="alert alert-error">
                     <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <h4 class="alert-heading">{{ _("Incorrect") }}</h4>
+                    <h4 class="alert-heading">{{ _("غير صحيح") }}</h4>
                     {{ error }}
                 </div>
             {% end %}
@@ -176,7 +176,7 @@
             {% for msg in success %}
                 <div class="alert alert-success">
                     <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <h4 class="alert-heading">{{ _("Success!") }}</h4>
+                    <h4 class="alert-heading">{{ _("نجاح!") }}</h4>
                     {{ msg }}
                 </div>
             {% end %}
