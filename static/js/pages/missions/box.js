@@ -82,13 +82,14 @@ $(document).ready(function() {
     function hintdialog(price) {
         var bank = $("#hintbanking").val();
         if (price === "0") {
-            $("#purchase-hint-text").text("This hint is free.  Would you like to take it?");
+            $("#purchase-hint-text").text("هذا التلميح مجاني. هل ترغب في أخذه؟");
         } else if (bank == 'true') {
-            $("#purchase-hint-text").text("Would you like to purchase this hint for $"+price+"?");
+            $("#purchase-hint-text").text("هل ترغب في شراء هذا التلميح مقابل $"+price+"؟");
         } else {
-            $("#purchase-hint-text").text("Would you like to take this hint for a deduction of "+price+" points?");
+            $("#purchase-hint-text").text("هل ترغب في أخذ هذا التلميح مع خصم "+price+" نقطة؟");
         }
     }
+
     $('td').on('mouseenter mouseleave', function(e) {
         //Allows the hover background to include the flag hints
         var tbody = $(this).closest("tbody");
