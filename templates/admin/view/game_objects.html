@@ -859,7 +859,7 @@
                                                         <th>#</th>
                                                         <th><!-- قفل العلم --></th>
                                                         <th>{{ _("الاسم") }}</th>
-                                                        <th style="width: 250px;">{{ _("الوصف") }}</th>
+                                                        <th style="width: 400px;">{{ _("الوصف") }}</th>
                                                         <th style="width: 250px;">{{ _("الرمز") }}</th>
                                                         <th>{{ _("القيمة") }}</th>
                                                         <th>{{ _("النوع") }}</th>
@@ -879,8 +879,8 @@
                                                                     <i class="fa fa-lock" title="مقفول بواسطة {{ Flag.by_id(flag.lock_id).name }}"></i>
                                                                 {% end %}
                                                             </td>
-                                                            <td class="shortcolumn" style="direction: rtl; text-align: right; padding-right: 25px;">{{ flag.name }}</td>
-                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right; width: 250px;">
+                                                            <td class="shortcolumn" style="direction: rtl; text-align: right;">{{ flag.name }}</td>
+                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right; width: 400px;">
                                                                 {{ flag.description }}
                                                                 {% if flag.type == FLAG_CHOICE %}
                                                                     {% set choices = FlagChoice.by_flag_id(flag.id) %}
