@@ -842,44 +842,54 @@
                                     </div>
                                     <br clear="all" />
                                     <!-- Start Flags -->
-                                    <div class="startflags">
+                                    <div class="startflags"> 
                                         <h4 style="display:inline;">
                                             <i class="fa fa-flag-o"></i>
-                                            {{_("Flags on") }} {{ box.name }}&nbsp;&nbsp;&nbsp;
+                                            {{ _("الأعلام  -") }} {{ box.name }}&nbsp;&nbsp;&nbsp;
                                         </h4>
                                         <a class="btn btn-primary btn-mini" href="/admin/create/flag?box={{box.uuid}}">
                                             <i class="fa fa-plus"></i>
-                                            {{_("Add Flags") }}
+                                            {{ _("إضافة الأعلام") }}
                                         </a>
                                         <hr>
                                         {% if len(box.flags_all) != 0 %}
-                                            <table class="table table-striped sort grid">
+                                            <table class="table table-striped sort grid" style="direction: rtl; text-align: right;">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th><!-- Flag Lock --></th>
-                                                        <th>{{_("Name")}}</th>
-                                                        <th>{{_("Description")}}</th>
-                                                        <th>{{_("Token")}}</th>
-                                                        <th>{{_("Value")}}</th>
-                                                        <th>{{_("Type")}}</th>
-                                                        <th style="text-align: center;"><i class="fa fa-paperclip" title="Attachments"></i></th>
-                                                        <th>&nbsp;<i class="fa fa-lock" title="Lock"></i></th>
-                                                        <th>{{_("Statistics")}}</th>
-                                                        <th><!-- Edit Button --></th>
-                                                        <th><!-- Delete Button --></th>
+                                                        <th><!-- قفل العلم --></th>
+                                                        <th>{{ _("الاسم") }}</th>
+                                                        <th>{{ _("الوصف") }}</th>
+                                                        <th>{{ _("الرمز") }}</th>
+                                                        <th>{{ _("القيمة") }}</th>
+                                                        <th>{{ _("النوع") }}</th>
+                                                        <th style="text-align: center;"><i class="fa fa-paperclip" title="المرفقات"></i></th>
+                                                        <th>&nbsp;<i class="fa fa-lock" title="القفل"></i></th>
+                                                        <th>{{ _("الإحصائيات") }}</th>
+                                                        <th><!-- زر التعديل --></th>
+                                                        <th><!-- زر الحذف --></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {% for index, flag in enumerate(sorted(box.flags_all)) %}
                                                         <tr id="{{ flag.uuid }}" class="{% if flag.locked %} locked{% end %}">
                                                             <td class="index shortcolumn" data-uuid="{{ flag.uuid }}">{{ index + 1 }}</td>
-                                                            <td class="shortcolumn" style="padding-right: 0px;">{% if flag.lock_id and Flag.by_id(flag.lock_id) %}<i class="fa fa-lock" title="Locked by {{ Flag.by_id(flag.lock_id).name }}"></i>{% end %}</td>
+                                                            <td class="shortcolumn" style="padding-right: 0px;">
+                                                                {% if flag.lock_id and Flag.by_id(flag.lock_id) %}
+                                                                    <i class="fa fa-lock" title="مقفول بواسطة {{ Flag.by_id(flag.lock_id).name }}"></i>
+                                                                {% end %}
+                                                            </td>
                                                             <td class="shortcolumn" style="padding-right: 25px;">{{ flag.name }}</td>
-                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ flag.description }}{% if flag.type == FLAG_CHOICE %}
-                                                                {% set choices = FlagChoice.by_flag_id(flag.id) %}
-                                                                {% if choices and len(choices) > 0 %}{% for item in choices %}- {{item.choice}}
-                                                                {% end %}{% end %}{% end %}</td>
+                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">
+                                                                {{ flag.description }}
+                                                                {% if flag.type == FLAG_CHOICE %}
+                                                                    {% set choices = FlagChoice.by_flag_id(flag.id) %}
+                                                                    {% if choices and len(choices) > 0 %}
+                                                                        {% for item in choices %}- {{ item.choice }}
+                                                                        {% end %}
+                                                                    {% end %}
+                                                                {% end %}
+                                                            </td>
                                                             <td><div class="wordbreak">{{ flag.token }}</div></td>
                                                             <td class="shortcolumn" style="text-align: center;">{% if options.banking %}${% end %}{{ flag.value }}</td>
                                                             <td class="shortcolumn">{{ str(flag.type) }}</td>
@@ -890,31 +900,31 @@
                                                             </td>
                                                             <td class="shortcolumn">
                                                                 {% if flag.locked %}
-                                                                <a id="lock-flag-button-{{ flag.uuid }}" class="btn btn-mini btn-warning" data-uuid="{{ flag.uuid }}">
-                                                                    <i class="fa fa-fw fa-lock" title="Unlock Flag"></i>
-                                                                </a>
+                                                                    <a id="lock-flag-button-{{ flag.uuid }}" class="btn btn-mini btn-warning" data-uuid="{{ flag.uuid }}">
+                                                                        <i class="fa fa-fw fa-lock" title="إلغاء قفل العلم"></i>
+                                                                    </a>
                                                                 {% else %}
-                                                                <a id="lock-flag-button-{{ flag.uuid }}" class="btn btn-mini btn-success" data-uuid="{{ flag.uuid }}">
-                                                                    <i class="fa fa-fw fa-unlock" title="Lock Flag"></i>
-                                                                </a>
+                                                                    <a id="lock-flag-button-{{ flag.uuid }}" class="btn btn-mini btn-success" data-uuid="{{ flag.uuid }}">
+                                                                        <i class="fa fa-fw fa-unlock" title="قفل العلم"></i>
+                                                                    </a>
                                                                 {% end %}
                                                             </td>
                                                             <td class="shortcolumn">
-                                                                <a id="details-flag-button-{{ flag.uuid }}" class="btn btn-mini" data-toggle="modal" href="#details-flag-modal" data-uuid="{{ flag.uuid }}" data-box-uuid="{{ flag.box.uuid }}" title="{{flag.token}}">
+                                                                <a id="details-flag-button-{{ flag.uuid }}" class="btn btn-mini" data-toggle="modal" href="#details-flag-modal" data-uuid="{{ flag.uuid }}" data-box-uuid="{{ flag.box.uuid }}" title="{{ flag.token }}">
                                                                     <i class="fa fa-fw fa-eye"></i>
-                                                                    {{ _("Details") }}
+                                                                    {{ _("التفاصيل") }}
                                                                 </a>
                                                             </td>
                                                             <td class="shortcolumn">
                                                                 <a id="edit-flag-button-{{ flag.uuid }}" class="btn btn-mini" data-toggle="modal" href="#edit-flag-modal" data-flagtype="{{ str(flag._type) }}" data-uuid="{{ flag.uuid }}" data-box-uuid="{{ flag.box.uuid }}">
                                                                     <i class="fa fa-fw fa-pencil"></i>
-                                                                    {{_("Edit Flag") }}
+                                                                    {{ _("تعديل العلم") }}
                                                                 </a>
                                                             </td>
                                                             <td class="shortcolumn">
                                                                 <a id="delete-flag-button-{{ flag.uuid }}" class="btn btn-danger btn-mini" data-toggle="modal" href="#delete-flag-modal" data-uuid="{{ flag.uuid }}">
                                                                     <i class="fa fa-fw fa-times-circle-o"></i>
-                                                                    {{_("Delete")}}
+                                                                    {{ _("حذف") }}
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -923,17 +933,18 @@
                                             </table>
                                         {% end %}
                                     </div>
+
                                     <!-- End Flags -->
                                     <br />
                                     <!-- Start Hints -->
                                     <div class="starthints">
                                         <h4 style="display:inline;">
                                             <i class="fa fa-medkit"></i>
-                                            {{_("Hints on")}} {{ box.name }}&nbsp;&nbsp;&nbsp;
+                                            {{_("التلميحات  -")}} {{ box.name }}&nbsp;&nbsp;&nbsp;
                                         </h4>
                                         <a class="btn btn-primary btn-mini" data-toggle="modal" href="/admin/create/hint?box={{box.uuid}}">
                                             <i class="fa fa-plus"></i>
-                                            {{_("Add Hint")}}
+                                            {{_("إضافة تلميح")}}
                                         </a>
                                         <hr>
                                         {% if len(box.hints) != 0 %}
@@ -948,7 +959,7 @@
                                             {% end %}
                                         
                                             {% if len(flaghints) > 0 %}
-                                            <h5>{{_("Flag Hints")}}</h5>
+                                            <h5>{{_("تلميحات الأعلام")}}</h5>
                                             <table class="table table-striped">
                                                 <thead>
                                                     <tr>
@@ -1027,11 +1038,11 @@
                                     <div class="startips">
                                         <h4 style="display:inline;">
                                             <i class="fa fa-fw fa-globe"></i>
-                                            {{_("IP Address")}}&nbsp;&nbsp;
+                                            {{_("عنوان الشبكة (IP)")}}&nbsp;&nbsp;
                                         </h4>
                                         <a id="add-ip-address-button-{{ box.uuid }}" class="btn btn-primary btn-mini" data-toggle="modal" href="#add-ip-address-modal" data-uuid="{{ box.uuid }}">
                                             <i class="fa fa-fw fa-plus"></i>
-                                            {{_("Add IP Address")}}
+                                            {{_("إضافة عنوان الشبكة")}}
                                         </a>
                                         <br />
                                         <hr>
