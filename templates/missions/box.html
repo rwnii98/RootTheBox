@@ -33,7 +33,7 @@
                 <input id="capture-text-flag-uuid" name="uuid" value="" type="hidden" />
                 <br />
                 <div class="control-group" style="direction: rtl; text-align: right;">
-                    <label class="control-label" for="flag-token" style="float: right; margin-left: 10px; font-weight: bold; font-size: 16px;">{{ _(":علم") }}</label>
+                    <label class="control-label" for="flag-token" style="float: right; margin-left: 10px; font-weight: bold; font-size: 21px;">{{ _("علم") }}</label>
                     <div class="controls">
                         <input autofocus required id="flag-token" name="token" type="text" placeholder="{{ _('علم') }}" autocomplete="off" />
                     </div>
@@ -111,10 +111,12 @@
         </div>
     </div>
     
-    <div id="purchase-hint-modal" class="modal hide fade" style="display: none;">
+    <div id="purchase-hint-modal" class="modal hide fade" style="display: none; direction: rtl; text-align: right;">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h3>{% if options.banking %}{{ _("Purchase") }}{% else %}{{ _("Take") }}{% end %} {{ _("Hint") }}</h3>
+            <h3 style="font-size: 21px; font-weight: bold;">
+                {% if options.banking %}{{ _("شراء") }}{% else %}{{ _("أخذ") }}{% end %} {{ _("تلميح") }}
+            </h3>
         </div>
         <div class="modal-body">
             <br />
@@ -125,9 +127,9 @@
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#" class="btn" data-dismiss="modal">{{_("Close")}}</a>
+            <a href="#" class="btn" data-dismiss="modal">{{ _("إغلاق") }}</a>
             <button id="purchase-hint-submit" class="btn btn-primary" type="button">
-                {% if options.banking %}{{ _("Buy") }}{% else %}{{ _("Yes") }}{% end %}
+                {% if options.banking %}{{ _("شراء") }}{% else %}{{ _("نعم") }}{% end %}
             </button>
         </div>
     </div>
