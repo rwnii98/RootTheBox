@@ -109,13 +109,14 @@
                 {% end %}
                 
                 <div class="control-group">
-                    <label class="control-label" for="handle"><i class="fa fa-user"></i> {{ _("اسم المستخدم") }}</label>
+                    
                     <div class="controls">
                         <input required id="handle" name="handle" maxlength="16" minlength="3" placeholder="{{ _('الاسم المستعار') }}" type="text"
                             rel="popover" pattern="^[a-zA-Z0-9_\-\.]{3,16}$"
                             data-original-title="{{ _('الاسم المستعار') }}"
                             data-content="{{ _('يجب أن يكون الاسم بين 3 إلى 16 حرفًا، ويمكن أن يحتوي على شرطة سفلية أو نقطة أو شرطة عادية.') }}" />
                     </div>
+                    <label class="control-label" for="handle"><i class="fa fa-user"></i> {{ _("اسم المستخدم") }}</label>
                 </div>
 
                 <div class="control-group">
