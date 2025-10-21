@@ -859,8 +859,8 @@
                                                         <th>#</th>
                                                         <th><!-- قفل العلم --></th>
                                                         <th>{{ _("الاسم") }}</th>
-                                                        <th>{{ _("الوصف") }}</th>
-                                                        <th>{{ _("الرمز") }}</th>
+                                                        <th style="width: 250px;">{{ _("الوصف") }}</th>
+                                                        <th style="width: 250px;">{{ _("الرمز") }}</th>
                                                         <th>{{ _("القيمة") }}</th>
                                                         <th>{{ _("النوع") }}</th>
                                                         <th style="text-align: center;"><i class="fa fa-paperclip" title="المرفقات"></i></th>
@@ -879,8 +879,8 @@
                                                                     <i class="fa fa-lock" title="مقفول بواسطة {{ Flag.by_id(flag.lock_id).name }}"></i>
                                                                 {% end %}
                                                             </td>
-                                                            <td class="shortcolumn" style="padding-right: 25px;">{{ flag.name }}</td>
-                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">
+                                                            <td class="shortcolumn" style="direction: rtl; text-align: right; padding-right: 25px;">{{ flag.name }}</td>
+                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right; width: 250px;">
                                                                 {{ flag.description }}
                                                                 {% if flag.type == FLAG_CHOICE %}
                                                                     {% set choices = FlagChoice.by_flag_id(flag.id) %}
@@ -890,7 +890,7 @@
                                                                     {% end %}
                                                                 {% end %}
                                                             </td>
-                                                            <td><div class="wordbreak">{{ flag.token }}</div></td>
+                                                            <td><div class="wordbreak" style="width: 250px; direction: rtl; text-align: right;">{{ flag.token }}</div></td>
                                                             <td class="shortcolumn" style="text-align: center;">{% if options.banking %}${% end %}{{ flag.value }}</td>
                                                             <td class="shortcolumn">{{ str(flag.type) }}</td>
                                                             <td class="shortcolumn" style="text-align: center;">
