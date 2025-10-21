@@ -295,7 +295,7 @@
                             {% end %}
                             
                             <td class="shortcolumn" style="vertical-align: middle;">{{ box.flags.index(flag) +1 }}</td>
-                            <td class="shortcolumn" style="vertical-align: middle; padding-right: 20px; font-weight: bold;">{{ flag.name }}</td>
+                            <td class="shortcolumn" style="direction: rtl; text-align: right; font-weight: bold;">{{ flag.name }}</td>
 
                             {% if team and flag.lock_id and Flag.by_id(flag.lock_id) and not Flag.by_id(flag.lock_id) in team.flags %}
                                 <td class="descriptioncol"><i class="fa fa-lock"></i> {{ _("مقفول بواسطة") }} {{ Flag.by_id(flag.lock_id).name }}</td>
@@ -373,7 +373,7 @@
                                 {% else %}
                                     <td colspan="2" style="border-top: 0px;"></td>
                                 {% end %}
-                                <td colspan="{% if team and options.penalize_flag_value %}5{% else %}4{% end %}" class="descriptioncol markdown">{{ flag.description }}{% if flag.type == FLAG_CHOICE %}
+                                <td colspan="{% if team and options.penalize_flag_value %}5{% else %}4{% end %}" class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ flag.description }}{% if flag.type == FLAG_CHOICE %}
                                     {% set choices = FlagChoice.by_flag_id(flag.id) %}
                                     {% if choices and len(choices) > 0 %}{% for item in choices %}- {{item.choice}} {% end %}{% end %}{% end %}</td>
                                 <td style="border-top: 0px;"></td>
@@ -397,7 +397,7 @@
                                             <td class="hidehovercolor" style="background: green; margin: 0px; padding: 0px; border-top: 1px solid green;"></td>
                                             <td style="border-top: 0px;"></td>
                                             <td style="text-align: right;"><i class="fa fa-arrow-circle-up"></i><h5 style="display:inline;"> {{ _("تلميح") }} #{{ i }}:</h5></td>
-                                            <td colspan="{% if team and options.penalize_flag_value %}2{% else %}1{% end %}" class="descriptioncol markdown">{{ hint.description }}</td>
+                                            <td colspan="{% if team and options.penalize_flag_value %}2{% else %}1{% end %}" class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ hint.description }}</td>
                                             <td class="shortcolumn" style="text-align: center;"><i>{% if user.is_admin() %}{% elif hint in team.hints %}{% if options.banking %}{{ _("تم الشراء") }}{% else %}{{ _("تم الاستفادة") }}{% end %}{% end %}</i></td>
                                             <td class="shortcolumn" style="text-align: center;">{% if team and hint in team.hints %}-{{ hint.price }}{% end %}</td>
                                             <td colspan="2" style="border-top: 0px;"></td>
