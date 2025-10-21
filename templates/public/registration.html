@@ -126,7 +126,7 @@
                         <input required id="playername" name="playername" maxlength="64" minlength="3" placeholder="{{ _('الاسم الكامل') }}" type="text"
                             rel="popover" pattern="^[a-zA-Z0-9 ]{3,64}$"
                             data-original-title="{{ _('اسم اللاعب') }}"
-                            data-content="{{ _('اسمك الظاهر للمسؤولين عن اللعبة. يجب أن يكون بين 3 و64 حرفًا أبجديًا أو رقميًا.') }}"
+                            data-content="{{ _('اسمك الظاهر للمسؤولين عن اللعبة. يجب أن يكون الاسم الثلاثي.') }}"
                             style="text-align: right;" />
                     </div>
                     <label class="control-label" for="playername" style="font-size: 18px;">
@@ -159,8 +159,8 @@
                             <!-- <input type="radio" class="teammode" name="teammode" value="create">
                             <h5 style="display: inline;">{{ _("إنشاء فريق جديد") }}</h5> -->
                             <h5 style="direction: rtl; text-align: right;">
-                                ملاحظة: يجب على المجموعات من <strong>5 إلى 8</strong> استخدام الرمز <strong>"code1"</strong>،  
-                                ويجب على المجموعات من <strong>9 إلى 12</strong> استخدام الرمز <strong>"code2"</strong>.
+                                ملاحظة: يجب على المجموعات من <strong>5 إلى 8</strong> استخدام الرمز <strong>"99c9c41db26642f6"</strong>،  
+                                ويجب على المجموعات من <strong>9 إلى 12</strong> استخدام الرمز <strong>"afe61dda503a45c8"</strong>.
                             </h5>
                         </div>
                         <br/><br/>
@@ -201,7 +201,7 @@
                             <input id="team-code" name="team-code" type="text" placeholder="{{ _('رمز الفريق') }}"
                                 rel="popover"
                                 data-original-title="{{ _('رمز الفريق') }}"
-                                data-content="{{ _('أدخل الرمز المستخدم للانضمام إلى الفريق الموجود. يظهر هذا الرمز لأعضاء الفريق في صفحتهم الرئيسية.') }}"
+                               data-content="{{ _('اذا كنت من مجموعة الصف الخامس الى الثامن، استخدم الكود الآتي: 99c9c41db26642f6 أما اذا كنت من مجموعة الصف التاسع الى الثاني عشر، استخدم الكود الآتي: afe61dda503a45c8') }}"
                                 style="text-align: right;" >
                         </div>
                         <label class="control-label" for="team-code" style="font-size: 18px;">
@@ -229,8 +229,9 @@
                         <input required id="pass1" name="pass1" minlength="{{ options.min_user_password_length }}" placeholder="{{ _('كلمة المرور') }}" type="password"
                             autocomplete="off"
                             rel="popover"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[{\]};:<>|./?]).{12,}$"
                             data-original-title="{{ _('كلمة المرور') }}"
-                            data-content="{{ _('أدخل كلمة مرور معقدة بطول لا يقل عن') }} {{ options.min_user_password_length }} {{ _('حروف') }}"
+                            data-content="كلمة المرور يجب ألا تقل عن 12 حرفًا، ويجب أن تحتوي على حرف كبير واحد على الأقل وحروف صغيرة، بالإضافة إلى أرقام ورموز."
                             style="text-align: right;" />
                     </div>
                     <label class="control-label" for="pass1" style="font-size: 18px;">
@@ -243,6 +244,7 @@
                         <input required id="pass2" name="pass2" minlength="{{ options.min_user_password_length }}" placeholder="{{ _('تأكيد كلمة المرور') }}" type="password"
                             autocomplete="off"
                             rel="popover"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[{\]};:<>|./?]).{12,}$"
                             data-original-title="{{ _('تأكيد كلمة المرور') }}"
                             data-content="{{ _('أدخل نفس كلمة المرور السابقة') }}"
                             style="text-align: right;" />
