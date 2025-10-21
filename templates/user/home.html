@@ -116,10 +116,10 @@
         {% if not visitor %}
 		{% from models.MarketItem import MarketItem %}
         <div class="row">
-            <div class="span11 offset1 well">
+            <div class="span11 offset1 well" style="direction: rtl; text-align: right;">
                 <h2>
                     <i class="fa fa-trophy"></i>
-                    {{ _("Game Information") }}
+                    {{ _("معلومات اللعبة") }}
                 </h2>
                 <hr>
                 <div class="row">
@@ -127,29 +127,29 @@
                         <i class="fa fa-sitemap" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-                            {{ _("Welcome to the computer war game where security professionals can practice and learn.") }}  
-                            {{ _("Each player will target challenges of varying difficulty and sophistication, attempting to collect flags and win glory.  Good luck!") }}
+                        {{ _("مرحبًا بك في لعبة الحرب الحاسوبية حيث يمكن لمحترفي الأمن التدرب والتعلم.") }}
+                        {{ _("سيستهدف كل لاعب تحديات بمستويات صعوبة وتعقيد متباينة، محاولًا جمع الأعلام والفوز بالمجد. حظًا موفقًا!") }}
                     </div>
                 </div>
                 <br/>
-				{% if options.show_organizor_help %}
-				<div class="row">
+                {% if options.show_organizor_help %}
+                <div class="row">
                     <div class="span1 offset1" style="text-align: center; padding-top: 5px;">
                         <i class="fa fa-question-circle" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-							{{ _("If you have any questions or need help do not hestitate to ask one of the organizers.") }}
+                        {{ _("إذا كان لديك أي أسئلة أو تحتاج مساعدة، فلا تتردد في سؤال أحد المنظمين.") }}
                     </div>
                 </div>
-				<br/>
-				{% end %}
+                <br/>
+                {% end %}
                 <div class="row">
                     <div class="span1 offset1" style="text-align: center; padding-top: 5px;">
                         <i class="fa fa-crosshairs" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-                            {{ _("Rules of Engagement: Do not attack the game scoreboard platform.  Do not change the passwords of existing accounts in the network unless specified by a game objective.") }}
-                            {{ _("Do not delete or modify community flags unless instructed. Do not attack other players unless outlined in the game goals.") }}
+                        {{ _("قواعد الاشتباك: لا تهاجم منصة لوحة النتائج الخاصة باللعبة. لا تغير كلمات مرور الحسابات الموجودة في الشبكة ما لم يُحدَّد ذلك كهدف من أهداف اللعبة.") }}
+                        {{ _("لا تحذف أو تعدل أعلام المجتمع ما لم يُطلب منك ذلك. ولا تهاجم لاعبين آخرين إلا إذا كان ذلك مُوضّحًا ضمن أهداف اللعبة.") }}
                     </div>
                 </div>
                 <br/>
@@ -160,9 +160,9 @@
                     </div>
                     <div class="span7 msgdescription">
                         {% if options.dynamic_flag_type == "decay_future" %}
-                            {{ _("This game is set up to use dynamic scoring based on speed, meaning as other players capture the flags, the future value of those flags will decrease.  So grab them fast or lose out!") }}
+                            {{ _("تم إعداد هذه اللعبة لاستخدام نظام نقاط ديناميكي يعتمد على السرعة؛ مما يعني أنه كلما استولى لاعبون آخرون على الأعلام ستنخفض القيمة المستقبلية لتلك الأعلام. فالتقطها بسرعة وإلا ستفقد فرصتك!") }}
                         {% else %}
-                            {{ _("This game is set up to use dynamic scoring based on difficulty, meaning as other players capture the flags, the overall value of those flags will decrease and potentially reduce your score.") }}
+                            {{ _("تم إعداد هذه اللعبة لاستخدام نظام نقاط ديناميكي يعتمد على الصعوبة؛ مما يعني أنه كلما استولى لاعبون آخرون على الأعلام ستنخفض القيمة الإجمالية لتلك الأعلام وقد يؤثر ذلك على نتيجتك.") }}
                         {% end %}
                     </div>
                 </div>
@@ -174,10 +174,10 @@
                         <i class="fa fa-minus-circle" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-                        {{ _("Failure has a cost. Be careful as penalties are applied when incorrect answers are submitted.") }}  
-                        {{ _("The deduction is") }} {{ options.flag_penalty_cost }}% {{ _("of the flag's value. It will start on the") }} {% set n = options.flag_start_penalty %}{{str(n)+("th" if 4<=n%100<=20 else {1:"st",2:"nd",3:"rd"}.get(n%10, "th"))}} 
-                        {{ _("attempt and continue until the") }} {% set n = options.flag_stop_penalty - 1 %}{{str(n)+("th" if 4<=n%100<=20 else {1:"st",2:"nd",3:"rd"}.get(n%10, "th"))}}. {{ _("No further penalty thereafter.") }}
-                        <!-- Max loss is {{ (options.flag_stop_penalty - options.flag_start_penalty) * options.flag_penalty_cost }}% of the flag's value. -->
+                        {{ _("للإخفاق ثمن. احذر، فهنالك عقوبات تُطبّق عند إرسال إجابات خاطئة.") }}
+                        {{ _("نسبة الخصم هي") }} {{ options.flag_penalty_cost }}% {{ _("من قيمة العلم. سيبدأ الخصم من المحاولة") }} {% set n = options.flag_start_penalty %}{{str(n)+("th" if 4<=n%100<=20 else {1:"st",2:"nd",3:"rd"}.get(n%10, "th"))}} 
+                        {{ _("وتستمر حتى المحاولة") }} {% set n = options.flag_stop_penalty - 1 %}{{str(n)+("th" if 4<=n%100<=20 else {1:"st",2:"nd",3:"rd"}.get(n%10, "th"))}}. {{ _("لا يوجد خصم إضافي بعد ذلك.") }}
+                        <!-- أقصى خسارة هي {{ (options.flag_stop_penalty - options.flag_start_penalty) * options.flag_penalty_cost }}% من قيمة العلم. -->
                     </div>
                 </div>
                 <br/>
@@ -188,7 +188,7 @@
                         <i class="fa fa-dollar" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-                        {{ _("It's about the money and it's time to cash in on those skills!  This game is set up to use a banking system, so waste no time to build your fortune and buy what you need to win.") }}
+                        {{ _("المسألة تتعلق بالمال وحان وقت تحويل تلك المهارات إلى رصيد! تم إعداد هذه اللعبة لاستخدام نظام بنكي داخل اللعبة، فابنِ ثروتك واشترِ ما تحتاجه للفوز.") }}
                     </div>
                 </div>
                 <br/>
@@ -199,21 +199,21 @@
                         <i class="fa fa-shopping-cart" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-						{% if options.use_black_market %}
-							{{ _("The black market is open and you know a guy. The following items are available:") }}
-							{% set market_items = MarketItem.all() %}
-							{% if market_items %}
-								<ul>
-								{% for index, item in enumerate(market_items) %}
-									{% if item.name in options.allowed_market_items %}
-										<li>
-											<b>{{ _(item.name) }}</b>: {{ _(item.description) }}
-										</li>
-									{% end %}
-								{% end %}
-								</ul>
-							{% end %}
-						{% end %}
+                        {% if options.use_black_market %}
+                            {{ _("السوق السوداء مفتوح وتعرف شخصًا ما. العناصر التالية متاحة:") }}
+                            {% set market_items = MarketItem.all() %}
+                            {% if market_items %}
+                                <ul>
+                                {% for index, item in enumerate(market_items) %}
+                                    {% if item.name in options.allowed_market_items %}
+                                        <li>
+                                            <b>{{ _(item.name) }}</b>: {{ _(item.description) }}
+                                        </li>
+                                    {% end %}
+                                {% end %}
+                                </ul>
+                            {% end %}
+                        {% end %}
                     </div>
                 </div>
                 <br/>
@@ -224,12 +224,13 @@
                         <i class="fa fa-android" style="font-size: 180%;"></i>
                     </div>
                     <div class="span7 msgdescription">
-                        {{ _("Time to create a botnet. By uploading a small bot program to target machines, you can be periodically rewarded for each bot in your botnet; the larger the botnet the larger the reward.") }}
+                        {{ _("حان وقت إنشاء شبكة بوت. بتحميل برنامج بوت صغير لاستهداف الأجهزة، يمكنك الحصول على مكافآت دورية عن كل بوت في شبكتك؛ كلما كبرت الشبكة زادت المكافأة.") }}
                     </div>
                 </div>
                 <br/>
                 {% end %}
             </div>
+
         </div>
         {% end %}
     </div>
