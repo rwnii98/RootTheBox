@@ -579,7 +579,7 @@
     <div id="details-flag-modal" class="modal hide fade" style="display: none; width:760px; margin-left:-380px;">
         <div class="modal-header" style="padding-bottom: 0; margin-bottom: 0;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h3><i class="fa fa-fw fa-flag"></i> {{ _("Flag Details") }}<span id="flag_value" style="float: right; font-size: 80%; padding-right: 50px; margin-top: 6px;"></span></h3>
+            <h3><i class="fa fa-fw fa-flag"></i> {{ _("تفاصيل العلم") }}<span id="flag_value" style="float: right; font-size: 80%; padding-right: 50px; margin-top: 6px;"></span></h3>
             <h5>
                 <table class="table">
                     <tbody id="details-flag">
@@ -700,7 +700,7 @@
                     <br />
                     {% for corporation in Corporation.all() %}
                         <li>
-                            <a href="#{{ corporation.uuid }}">
+                            <a href="#{{ corporation.uuid }}" style="direction: rtl; text-align: right;">
                                 <i class="icon-chevron-right"></i>
                                 &nbsp;&nbsp;{{ corporation.name }}
                             </a>
@@ -717,7 +717,7 @@
                 <br />
                 {% for box in sorted(Box.all()) %}
                     <li>
-                        <a href="#{{ box.uuid }}">
+                        <a href="#{{ box.uuid }}" style="direction: rtl; text-align: right;">
                             <i class="icon-chevron-right"></i>
                             &nbsp;&nbsp;{{ box.name }}
                         </a>
@@ -940,11 +940,11 @@
                                     <div class="starthints">
                                         <h4 style="display:inline;">
                                             <i class="fa fa-medkit"></i>
-                                            {{_("التلميحات  -")}} {{ box.name }}&nbsp;&nbsp;&nbsp;
+                                            {{ _("التلميحات  -") }} {{ box.name }}&nbsp;&nbsp;&nbsp;
                                         </h4>
                                         <a class="btn btn-primary btn-mini" data-toggle="modal" href="/admin/create/hint?box={{box.uuid}}">
                                             <i class="fa fa-plus"></i>
-                                            {{_("إضافة تلميح")}}
+                                            {{ _("إضافة تلميح") }}
                                         </a>
                                         <hr>
                                         {% if len(box.hints) != 0 %}
@@ -957,37 +957,37 @@
                                                     {% set boxhints.append(hint) %}
                                                 {% end %}
                                             {% end %}
-                                        
+
                                             {% if len(flaghints) > 0 %}
-                                            <h5>{{_("تلميحات الأعلام")}}</h5>
-                                            <table class="table table-striped">
+                                            <h5>{{ _("تلميحات الأعلام") }}</h5>
+                                            <table class="table table-striped" style="direction: rtl; text-align: right;">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>{% if options.banking %}{{_("Price")}}{% else %}{{_("Cost")}}{% end %}</th>
-                                                        <th>{{_("Flag")}}</th>
-                                                        <th>{{_("Description")}}</th>
-                                                        <th><!-- Edit Button --></th>
-                                                        <th><!-- Delete Button --></th>
+                                                        <th>{% if options.banking %}{{ _("السعر") }}{% else %}{{ _("التكلفة") }}{% end %}</th>
+                                                        <th>{{ _("العلم") }}</th>
+                                                        <th>{{ _("الوصف") }}</th>
+                                                        <th><!-- زر التعديل --></th>
+                                                        <th><!-- زر الحذف --></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {% for index, hint in enumerate(flaghints) %}
                                                         <tr>
                                                             <td class="shortcolumn">{{ index + 1 }}</td>
-                                                            <td class="shortcolumn" style="text-align: center;">{% if options.banking %}{{_("$")}}{% end %}{{ hint.price }}</td>
+                                                            <td class="shortcolumn" style="text-align: center;">{% if options.banking %}{{ _("$") }}{% end %}{{ hint.price }}</td>
                                                             <td class="shortcolumn flagname" style="padding-right: 25px;">{{ Flag.by_id(hint.flag_id).name }}</td>
-                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;" >{{ hint.description }}</td>
+                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ hint.description }}</td>
                                                             <td class="shortcolumn">
                                                                 <a id="edit-hint-button-{{ hint.uuid }}" class="btn btn-mini" data-toggle="modal" href="#edit-hint-modal" data-uuid="{{ hint.uuid }}" data-box-uuid="{{ hint.box.uuid }}">
                                                                     <i class="fa fa-fw fa-pencil"></i>
-                                                                    {{_("Edit Hint")}}
+                                                                    {{ _("تعديل التلميح") }}
                                                                 </a>
                                                             </td>
                                                             <td class="shortcolumn">
                                                                 <a id="delete-hint-button-{{ hint.uuid }}" class="btn btn-danger btn-mini" data-toggle="modal" href="#delete-hint-modal" data-uuid="{{ hint.uuid }}">
                                                                     <i class="fa fa-fw fa-times-circle-o"></i>
-                                                                    {{_("Delete")}}
+                                                                    {{ _("حذف") }}
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -995,34 +995,35 @@
                                                 </tbody>
                                             </table>
                                             {% end %}
+
                                             {% if len(boxhints) > 0 %}
-                                            <h5>{{_("Box Hints")}}</h5>
-                                            <table class="table table-striped">
+                                            <h5>{{ _("تلميحات الصندوق") }}</h5>
+                                            <table class="table table-striped" style="direction: rtl; text-align: right;">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>{% if options.banking %}{{_("Price")}}{% else %}{{_("Cost")}}{% end %}</th>
-                                                        <th>{{_("Description")}}</th>
-                                                        <th><!-- Edit Button --></th>
-                                                        <th><!-- Delete Button --></th>
+                                                        <th>{% if options.banking %}{{ _("السعر") }}{% else %}{{ _("التكلفة") }}{% end %}</th>
+                                                        <th>{{ _("الوصف") }}</th>
+                                                        <th><!-- زر التعديل --></th>
+                                                        <th><!-- زر الحذف --></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {% for index, hint in enumerate(boxhints) %}
                                                         <tr>
                                                             <td class="shortcolumn">{{ index + 1 }}</td>
-                                                            <td class="shortcolumn" style="text-align: center;">{% if options.banking %}{{_("$")}}{% end %}{{ hint.price }}</td>
-                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;" >{{ hint.description }}</td>
+                                                            <td class="shortcolumn" style="text-align: center;">{% if options.banking %}{{ _("$") }}{% end %}{{ hint.price }}</td>
+                                                            <td class="descriptioncol markdown" style="direction: rtl; text-align: right;">{{ hint.description }}</td>
                                                             <td class="shortcolumn">
                                                                 <a id="edit-hint-button-{{ hint.uuid }}" class="btn btn-mini" data-toggle="modal" href="#edit-hint-modal" data-uuid="{{ hint.uuid }}" data-box-uuid="{{ hint.box.uuid }}">
                                                                     <i class="fa fa-fw fa-pencil"></i>
-                                                                    {{_("Edit Hint")}}
+                                                                    {{ _("تعديل التلميح") }}
                                                                 </a>
                                                             </td>
                                                             <td class="shortcolumn">
                                                                 <a id="delete-hint-button-{{ hint.uuid }}" class="btn btn-danger btn-mini" data-toggle="modal" href="#delete-hint-modal" data-uuid="{{ hint.uuid }}">
                                                                     <i class="fa fa-fw fa-times-circle-o"></i>
-                                                                    {{_("Delete")}}
+                                                                    {{ _("حذف") }}
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -1033,6 +1034,7 @@
                                         {% end %}
                                     </div>
                                     <!-- End Hints -->
+
                                     <br/>
                                     <!-- Start IPs -->
                                     <div class="startips">
