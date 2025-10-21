@@ -153,112 +153,143 @@
 
                 {% if options.teams %}
                     {% if options.public_teams %}
-                        <input type="radio" class="teammode" name="teammode" value="join" checked><h5 style="display: inline;">{{ _("الانضمام إلى فريق موجود") }}</h5>
-                        <input type="radio" class="teammode" name="teammode" value="create"><h5 style="display: inline;">{{ _("إنشاء فريق جديد") }}</h5>
+                        <div style="direction: rtl; text-align: right;">
+                            <input type="radio" class="teammode" name="teammode" value="join" checked>
+                            <h5 style="display: inline;">{{ _("الانضمام إلى فريق موجود") }}</h5>
+                            <input type="radio" class="teammode" name="teammode" value="create">
+                            <h5 style="display: inline;">{{ _("إنشاء فريق جديد") }}</h5>
+                        </div>
                         <br/><br/>
 
                         <div id="teammode-create" style="display: none;">
-                            <div class="control-group">
-                                <label class="control-label" for="team_name">{{ _("اسم الفريق") }}</label>
-                                <div class="controls">
+                            <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                                <div class="controls" style="flex: 1;">
                                     <input id="team-name" name="team_name" maxlength="24" minlength="3" type="text" placeholder="{{ _('اسم الفريق') }}"
                                         rel="popover" pattern="^[a-zA-Z0-9 _\-\.]{3,24}$"
                                         data-original-title="{{ _('اسم الفريق الجديد') }}"
-                                        data-content="{{ _('اختر اسمًا لفريقك الجديد!') }} [3-24 {{ _('حرف') }}]" >
+                                        data-content="{{ _('اختر اسمًا لفريقك الجديد!') }} [3-24 {{ _('حرف') }}]"
+                                        style="text-align: right;" >
                                 </div>
+                                <label class="control-label" for="team_name" style="font-weight: bold; font-size: 18px;">
+                                    {{ _("اسم الفريق") }}
+                                </label>
                             </div>
 
-                            <div class="control-group">
-                                <label class="control-label" for="motto">{{ _("الشعار") }}</label>
-                                <div class="controls">
+                            <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                                <div class="controls" style="flex: 1;">
                                     <input id="motto" name="motto" maxlength="32" type="text" placeholder="{{ _('شعار الفريق') }}"
                                         rel="popover" pattern="^[a-zA-Z0-9 _\-\.]{,32}$"
                                         data-original-title="{{ _('شعار الفريق') }}"
-                                        data-content="{{ _('اختياري') }}: {{ _('ما هو شعار فريقك؟') }} [{{ _('الحد الأقصى') }}: 32 {{ _('حرف') }}]">
+                                        data-content="{{ _('اختياري') }}: {{ _('ما هو شعار فريقك؟') }} [{{ _('الحد الأقصى') }}: 32 {{ _('حرف') }}]"
+                                        style="text-align: right;" >
                                 </div>
+                                <label class="control-label" for="motto" style="font-weight: bold; font-size: 18px;">
+                                    {{ _("الشعار") }}
+                                </label>
                             </div>
                         </div>
                     {% else %}
                         <h5 style="margin-right: 20px; margin-bottom: 15px;">{{ _("الانضمام إلى فريق موجود") }}</h5>
                     {% end %}
 
-                    <div id="teammode-join" class="control-group">
-                        <label class="control-label" for="team-code">{{ _("رمز الفريق") }}</label>
-                        <div class="controls">
+                    <div id="teammode-join" class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                        <div class="controls" style="flex: 1;">
                             <input id="team-code" name="team-code" type="text" placeholder="{{ _('رمز الفريق') }}"
                                 rel="popover"
                                 data-original-title="{{ _('رمز الفريق') }}"
-                                data-content="{{ _('أدخل الرمز المستخدم للانضمام إلى الفريق الموجود. يظهر هذا الرمز لأعضاء الفريق في صفحتهم الرئيسية.') }}" >
+                                data-content="{{ _('أدخل الرمز المستخدم للانضمام إلى الفريق الموجود. يظهر هذا الرمز لأعضاء الفريق في صفحتهم الرئيسية.') }}"
+                                style="text-align: right;" >
                         </div>
+                        <label class="control-label" for="team-code" style="font-weight: bold; font-size: 18px;">
+                            {{ _("رمز الفريق") }}
+                        </label>
                     </div>
+
                 {% else %}
-                    <div class="control-group">
-                        <label class="control-label" for="motto">{{ _("الشعار") }}</label>
-                        <div class="controls">
+                    <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                        <div class="controls" style="flex: 1;">
                             <input id="motto" name="motto" maxlength="32" type="text" placeholder="{{ _('الشعار') }}"
                                 rel="popover" pattern="^[a-zA-Z0-9_\-\.]{,32}$"
                                 data-original-title="{{ _('الشعار') }}"
-                                data-content="{{ _('اختياري') }}: {{ _('ما هو شعارك؟') }} [{{ _('الحد الأقصى') }}: 32 {{ _('حرف') }}]">
+                                data-content="{{ _('اختياري') }}: {{ _('ما هو شعارك؟') }} [{{ _('الحد الأقصى') }}: 32 {{ _('حرف') }}]"
+                                style="text-align: right;" >
                         </div>
+                        <label class="control-label" for="motto" style="font-weight: bold; font-size: 18px;">
+                            {{ _("الشعار") }}
+                        </label>
                     </div>
                 {% end %}
 
-                <hr style="margin-left: 400px;">
+                <hr style="margin-right: 400px;">
 
-                <div class="control-group">
-                    <label class="control-label" for="pass1">{{ _("كلمة مرور الحساب") }}</label>
-                    <div class="controls">
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
                         <input required id="pass1" name="pass1" minlength="{{ options.min_user_password_length }}" placeholder="{{ _('كلمة المرور') }}" type="password"
                             autocomplete="off"
                             rel="popover"
                             data-original-title="{{ _('كلمة المرور') }}"
-                            data-content="{{ _('أدخل كلمة مرور معقدة بطول لا يقل عن') }} {{ options.min_user_password_length }} {{ _('حروف') }}" />
+                            data-content="{{ _('أدخل كلمة مرور معقدة بطول لا يقل عن') }} {{ options.min_user_password_length }} {{ _('حروف') }}"
+                            style="text-align: right;" />
                     </div>
+                    <label class="control-label" for="pass1" style="font-weight: bold; font-size: 18px;">
+                        {{ _("كلمة مرور الحساب") }}
+                    </label>
                 </div>
 
-                <div class="control-group">
-                    <label class="control-label" for="pass2">{{ _("تأكيد كلمة المرور") }}</label>
-                    <div class="controls">
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
                         <input required id="pass2" name="pass2" minlength="{{ options.min_user_password_length }}" placeholder="{{ _('تأكيد كلمة المرور') }}" type="password"
                             autocomplete="off"
                             rel="popover"
                             data-original-title="{{ _('تأكيد كلمة المرور') }}"
-                            data-content="{{ _('أدخل نفس كلمة المرور السابقة') }}" />
+                            data-content="{{ _('أدخل نفس كلمة المرور السابقة') }}"
+                            style="text-align: right;" />
                     </div>
+                    <label class="control-label" for="pass2" style="font-weight: bold; font-size: 18px;">
+                        {{ _("تأكيد كلمة المرور") }}
+                    </label>
                 </div>
 
                 {% if options.banking and not set(["Password Security", "Federal Reserve"]).isdisjoint(options.allowed_market_items) %}
-                    <div class="control-group">
-                        <label class="control-label" for="bpass1">{{ _("كلمة مرور الحساب البنكي") }}</label>
-                        <div class="controls">
-                            <input required id="bpass" name="bpass" maxlength="{{ options.max_password_length }}" placeholder="{{ _('كلمة مرور الحساب البنكي') }}" type="password"
-                                autocomplete="off"
-                                rel="popover"
-                                data-original-title="{{ _('كلمة المرور') }}"
-                                data-content="{{ _('تُستخدم لحماية حسابك البنكي داخل اللعبة.') }} [{{ _('الحد الأقصى') }}: {{ options.max_password_length }} {{ _('حرف') }}]. {{ _('لا تُدخل كلمة مرور حسابك البنكي الحقيقي!') }}" />
-                        </div>
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
+                        <input required id="bpass" name="bpass" maxlength="{{ options.max_password_length }}" placeholder="{{ _('كلمة مرور الحساب البنكي') }}" type="password"
+                            autocomplete="off"
+                            rel="popover"
+                            data-original-title="{{ _('كلمة المرور') }}"
+                            data-content="{{ _('تُستخدم لحماية حسابك البنكي داخل اللعبة.') }} [{{ _('الحد الأقصى') }}: {{ options.max_password_length }} {{ _('حرف') }}]. {{ _('لا تُدخل كلمة مرور حسابك البنكي الحقيقي!') }}"
+                            style="text-align: right;" />
                     </div>
+                    <label class="control-label" for="bpass1" style="font-weight: bold; font-size: 18px;">
+                        {{ _("كلمة مرور الحساب البنكي") }}
+                    </label>
+                </div>
                 {% end %}
 
                 {% if options.restrict_registration %}
-                    <div class="control-group">
-                        <label class="control-label" for="token">{{ _("رمز التسجيل") }}</label>
-                        <div class="controls">
-                            <input required id="regtoken" name="token" placeholder="{{ _('الرمز') }}" type="text"
-                                rel="popover" pattern="^[a-fA-F0-9]{1,6}$"
-                                data-original-title="{{ _('رمز التسجيل') }}"
-                                data-content="{{ _('احصل على رمز التسجيل من مكتب الاستقبال.') }}" />
-                        </div>
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
+                        <input required id="regtoken" name="token" placeholder="{{ _('الرمز') }}" type="text"
+                            rel="popover" pattern="^[a-fA-F0-9]{1,6}$"
+                            data-original-title="{{ _('رمز التسجيل') }}"
+                            data-content="{{ _('احصل على رمز التسجيل من مكتب الاستقبال.') }}"
+                            style="text-align: right;" />
                     </div>
+                    <label class="control-label" for="token" style="font-weight: bold; font-size: 18px;">
+                        {{ _("رمز التسجيل") }}
+                    </label>
+                </div>
                 {% end %}
 
                 {% if options.privacy_policy_link %}
-                    <div class="control-group">
-                        <label class="control-label" for="privacy_policy_accept">{{ _("أوافق على") }} <a href="{{ options.privacy_policy_link }}">{{ _("سياسة الخصوصية") }}</a></label>
-                        <div class="controls">
-                            <input required id="privacy_policy_accept" name="privacy_policy_accept" type="checkbox" />
-                        </div>
+                <div class="control-group" style="direction: rtl; text-align: right; display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <div class="controls" style="flex: 1;">
+                        <input required id="privacy_policy_accept" name="privacy_policy_accept" type="checkbox" />
                     </div>
+                    <label class="control-label" for="privacy_policy_accept" style="font-weight: bold; font-size: 18px;">
+                        {{ _("أوافق على") }} <a href="{{ options.privacy_policy_link }}">{{ _("سياسة الخصوصية") }}</a>
+                    </label>
+                </div>
                 {% end %}
 
                 <br />
