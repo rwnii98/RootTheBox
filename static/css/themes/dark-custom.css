@@ -436,6 +436,15 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
+
+.span3.well img.img-polaroid {
+    width: 200px;       /* bigger but still fits box */
+    height: auto;       /* maintain aspect ratio */
+    max-height: 160px;  /* don’t exceed box height */
+    display: block;
+    margin-bottom: 10px; /* small spacing below */
+    padding: 10px;
+}
 /* ===== Email Settings Form — Dark Mode Fixes ===== */
 
 /* Legend styling */
@@ -461,6 +470,7 @@ legend i.fa {
     text-align: right;
     color: #e0e0e0;
     font-weight: 500;
+    margin-top: 18px;
 }
 
 /* Controls container alignment */
