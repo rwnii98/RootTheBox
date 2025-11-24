@@ -835,6 +835,69 @@ h2, h4 {
     border: 1px solid #333;
     border-radius: 10px;
 }
+/* ===== SCOREBOARD TABLE — DARK MODE FIX ===== */
+.well.span7.offset1 #summary_table,
+.well.span7.offset1 #summary_table thead,
+.well.span7.offset1 #summary_table tbody {
+    color: #e0e0e0 !important;
+}
+
+/* Header */
+.well.span7.offset1 #summary_table thead th {
+    background-color: #2a2a2a !important;
+    color: #f0f0f0 !important;
+    border-bottom: 2px solid #444 !important;
+}
+
+/* Striped rows: odd */
+.well.span7.offset1 #summary_table tbody tr:nth-child(odd) {
+    background-color: #1e1e1e !important;
+}
+
+/* Even rows */
+.well.span7.offset1 #summary_table tbody tr:nth-child(even) {
+    background-color: #252525 !important;
+}
+
+/* Hover row */
+.well.span7.offset1 #summary_table tbody tr:hover {
+    background-color: #333333 !important;
+}
+
+/* Cell text — override inline inheritance */
+.well.span7.offset1 .summarycolumn,
+.well.span7.offset1 .summarycolumn div,
+.well.span7.offset1 .summarycolumn span {
+    color: #e0e0e0 !important;
+}
+
+/* Rank numbers (1, 2, 3...) */
+.well.span7.offset1 .shortcolumn.columncenter,
+.well.span7.offset1 td.summarycolumn.shortcolumn.columncenter {
+    color: #ffd700 !important;
+    font-weight: bold;
+}
+
+/* Money/score (highlighted) */
+.well.span7.offset1 .moneycol {
+    color: #a0d4ff !important;
+}
+
+/* Flags count */
+.well.span7.offset1 .flagcol {
+    color: #a8e6cf !important;
+}
+
+/* Buttons */
+.well.span7.offset1 .btn.btn-mini {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    color: #a0d4ff !important;
+}
+.well.span7.offset1 .btn.btn-mini:hover {
+    background-color: #3a3a3a !important;
+    color: #e0f0ff !important;
+}
 
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
