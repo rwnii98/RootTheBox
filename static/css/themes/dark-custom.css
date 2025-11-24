@@ -609,6 +609,14 @@ legend i.fa {
     background: #1e1e1e;
     border-radius: 6px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 15px;
+    margin: 0 20px 20px 0;
+    margin-right: 20px;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
 }
 
 .pagination li.disabled a {
@@ -886,9 +894,8 @@ h2, h4 {
     background: transparent !important;
 }
 
-/* Rank (1, 2, 3…) — highlighted */
+/* Rank (1, 2, 3…) */
 .well.span7.offset1 .shortcolumn.centercolumn {
-    color: #ffd700 !important;
     font-weight: bold;
 }
 
@@ -905,9 +912,6 @@ h2, h4 {
 
 /* Buttons */
 .well.span7.offset1 .btn.btn-mini {
-    background-color: #2a2a2a !important;
-    border: 1px solid #444 !important;
-    color: #a0d4ff !important;
     font-size: 12px;
     padding: 3px 8px;
     border-radius: 4px;
@@ -915,6 +919,57 @@ h2, h4 {
 }
 .well.span7.offset1 .btn.btn-mini:hover {
     background-color: #3a3a3a
+}
+/* ===== MVP SCOREBOARD — DARK MODE ===== */
+.well.span3 {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    color: #e0e0e0 !important;
+}
+
+.well.span3 table#scoreboard_mvp {
+    color: #e0e0e0 !important;
+}
+
+/* Table header */
+.well.span3 #scoreboard_mvp thead th {
+    background-color: #2a2a2a !important;
+    color: #f0f0f0 !important;
+    font-weight: 600 !important;
+    padding: 10px 8px !important;
+    border-bottom: 2px solid #444 !important;
+}
+
+/* Striped rows — override Bootstrap .table-striped */
+.well.span3 #scoreboard_mvp tbody tr:nth-child(odd) > td,
+.well.span3 #scoreboard_mvp tbody tr:nth-child(odd) > th {
+    background-color: #1e1e1e !important;
+}
+
+.well.span3 #scoreboard_mvp tbody tr:nth-child(even) > td,
+.well.span3 #scoreboard_mvp tbody tr:nth-child(even) > th {
+    background-color: #252525 !important;
+}
+
+/* Hover effect */
+.well.span3 #scoreboard_mvp tbody tr:hover > td,
+.well.span3 #scoreboard_mvp tbody tr:hover > th {
+    background-color: #333 !important;
+}
+
+/* MVP name & points text */
+.well.span3 #scoreboard_mvp tbody td {
+    color: #e0e0e0 !important;
+    padding: 8px 10px !important;
+}
+
+/* Points column (highlighted) */
+.well.span3 #scoreboard_mvp .summarycolumn {
+    color: #a0d4ff !important;
+    font-weight: bold !important;
 }
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
