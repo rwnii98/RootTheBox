@@ -837,29 +837,40 @@ h2, h4 {
 }
 
 /* ======= Footer (Dark Mode) ======= */
-.navbar-inner.footernav {
-    background-color: #1a1a1a;
-    border-top: 1px solid #333;
-    color: #aaa;
-    padding: 10px 15px;
-    font-size: 0.85rem;
-    text-align: left;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+div.navbar-inner.footernav,
+.navbar-inner > div.footernav,
+.footer,
+.footernav {
+    background-color: #1a1a1a !important;
+    border-top: 1px solid #333 !important;
+    color: #aaa !important;
+    padding: 10px 15px !important;
+    font-size: 0.85rem !important;
+    text-align: left !important;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15) !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
 }
 
-.navbar-inner.footernav a {
-    color: #6ab0f3 !important; /* soft bright blue */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
+/* Ensure link inside is visible */
+div.navbar-inner.footernav a,
+.footernav a {
+    color: #6ab0f3 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: color 0.2s !important;
 }
 
-.navbar-inner.footernav a:hover {
+div.navbar-inner.footernav a:hover,
+.footernav a:hover {
     color: #a0d4ff !important;
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
-/* Ensure right-floated span doesn’t interfere */
-.navbar-inner.footernav span {
-    color: #888;
+/* Handle the right-floated span (e.g., for extra icons/stats) */
+div.navbar-inner.footernav span,
+.footernav span {
+    float: right !important;
+    padding-right: 5px !important;
+    color: #888 !important;
 }
