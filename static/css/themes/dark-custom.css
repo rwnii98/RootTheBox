@@ -835,47 +835,86 @@ h2, h4 {
     border: 1px solid #333;
     border-radius: 10px;
 }
-/* ===== SCOREBOARD TABLE — DARK MODE FIX ===== */
-/* Dark mode for scoreboard rows */
-.well.span7.offset1 #summary_table tbody tr {
-    background-color: #1e1e1e;
-}
-.well.span7.offset1 #summary_table tbody tr:nth-child(even) {
-    background-color: #252525;
-}
-
-/* Team name cell text (including Arabic) */
-.well.span7.offset1 .summarycolumn.anim\:hold,
-.well.span7.offset1 .summarycolumn.anim\:hold .summarycolumn {
+/* ===== SCOREBOARD SECTION — DARK MODE ===== */
+.well.span7.offset1 {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     color: #e0e0e0;
 }
 
-/* Rank, flags, score */
-.well.span7.offset1 .shortcolumn.centercolumn,
-.well.span7.offset1 .flagcol,
-.well.span7.offset1 .moneycol {
-    color: #e0e0e0;
+/* Table container */
+.well.span7.offset1 table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
 }
 
-/* Rank numbers (1, 2, 3…) — keep highlighted */
+/* Table header */
+.well.span7.offset1 #summary_table thead th {
+    background-color: #2a2a2a !important;
+    color: #f0f0f0 !important;
+    font-weight: 600;
+    padding: 10px 8px;
+    white-space: nowrap;
+    border-bottom: 2px solid #444;
+}
+
+/* Striped rows — OVERRIDES Bootstrap .table-striped */
+.well.span7.offset1 #summary_table tbody tr:nth-child(odd) > td,
+.well.span7.offset1 #summary_table tbody tr:nth-child(odd) > th {
+    background-color: #1e1e1e !important;
+}
+
+.well.span7.offset1 #summary_table tbody tr:nth-child(even) > td,
+.well.span7.offset1 #summary_table tbody tr:nth-child(even) > th {
+    background-color: #252525 !important;
+}
+
+/* Hover row */
+.well.span7.offset1 #summary_table tbody tr:hover > td,
+.well.span7.offset1 #summary_table tbody tr:hover > th {
+    background-color: #333 !important;
+}
+
+/* Text: team names (including Arabic), rank, flags, score */
+.well.span7.offset1 .summarycolumn,
+.well.span7.offset1 .summarycolumn div,
+.well.span7.offset1 .summarycolumn span {
+    color: #e0e0e0 !important;
+    background: transparent !important;
+}
+
+/* Rank (1, 2, 3…) — highlighted */
 .well.span7.offset1 .shortcolumn.centercolumn {
-    color: #ffd700;
+    color: #ffd700 !important;
     font-weight: bold;
+}
+
+/* Flags count */
+.well.span7.offset1 .flagcol {
+    color: #a8e6cf !important;
 }
 
 /* Score (money) — blue accent */
 .well.span7.offset1 .moneycol {
-    color: #a0d4ff;
+    color: #a0d4ff !important;
+    font-weight: bold;
 }
 
 /* Buttons */
 .well.span7.offset1 .btn.btn-mini {
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    color: #a0d4ff;
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    color: #a0d4ff !important;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-shadow: none;
 }
 .well.span7.offset1 .btn.btn-mini:hover {
-    background-color: #3a3a3a;
+    background-color: #3a3a3a
 }
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
