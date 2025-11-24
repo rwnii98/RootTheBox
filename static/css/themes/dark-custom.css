@@ -605,34 +605,67 @@ legend i.fa {
     color: #ccc;
 }
 
+/* Pagination container — Dark Mode */
+.row-fluid .offset1 {
+    margin-left: 0.3px;
+    margin-bottom: 0;
+}
+
 .pagination {
-    background: #1e1e1e;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 5px 15px;
     margin: 0 20px 20px 0;
-    margin-right: 20px;
+    background: #1e1e1e;               /* dark bg */
     border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25); /* deeper shadow */
     font-family: Arial, sans-serif;
 }
 
-.pagination li.disabled a {
-    color: #aaa;
-    border: 1px solid #444;
-    background: #2a2a2a;
+/* List inside pagination */
+.pagination ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    align-items: stretch;
 }
 
-.pagination li select {
-    border: 1px solid #444;
-    background: #2a2a2a;
-    color: #e0e0e0;
+/* Label item (not clickable) */
+.pagination li.disabled a {
+    cursor: default;
+    color: #aaa;                      /* light gray text */
+    font-weight: 500;
+    padding: 5px 12px;
+    border: 1px solid #444;           /* dark border */
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    pointer-events: none;
+    background: #2a2a2a;              /* dark neutral bg */
 }
+
+/* Select box styling */
+.pagination li select {
+    padding: 4px 6px;
+    border: 1px solid #444;           /* dark border */
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    cursor: pointer;
+    height: 44px;
+    box-sizing: border-box;
+    background: #2a2a2a;              /* dark input bg */
+    color: #e0e0e0;                   /* light text */
+}
+
 .pagination li select:focus {
-    border-color: #4da6ff;
-    box-shadow: 0 0 3px rgba(77, 166, 255, 0.6);
+    outline: none;
+    border-color: #4da6ff;            /* match navbar blue */
+    box-shadow: 0 0 3px rgba(77, 166, 255, 0.5);
 }
 
 .well.span7.offset1 {
