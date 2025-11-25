@@ -1016,27 +1016,10 @@ h2, h4 {
     border: 1px solid #333;
     border-radius: 10px;
 }
-/* Dark background for all flagbody rows */
-tbody.flagbody tr {
-    background-color: #1a1a1a !important;
-    color: #e6e6e6 !important;
-}
-
-/* Description row (usually second row inside tbody.flagbody) */
-tbody.flagbody tr:nth-child(2) {
-    background-color: #202020 !important;
-}
-
-/* Fix hover: remove white background */
+/* Change hover color ONLY for flagbody rows */
 .table-hover tbody.flagbody tr:hover {
-    background-color: #2b2b2b !important;
-    color: #ffffff !important;
-}
-
-/* Make sure no inline backgrounds override */
-tbody.flagbody tr td[style],
-tbody.flagbody tr[style] {
-    background-color: inherit !important;
+    background-color: #2b2b2b !important; /* dark hover */
+    color: inherit !important;            /* keep text as is */
 }
 /* ===== SCOREBOARD SECTION — DARK MODE ===== */
 .well.span7.offset1 {
