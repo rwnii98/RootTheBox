@@ -1135,7 +1135,7 @@ h2, h4 {
     background-color: #1e1e1e !important;
     border: 1px solid #333 !important;
     border-radius: 10px !important;
-    padding: 24px !important;
+    padding: 70px !important;
     color: #e0e0e0 !important;
     min-height: 1800px !important; /* ensures all inner content fits */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
@@ -1217,31 +1217,6 @@ h2, h4 {
     color: #ffcc00 !important;
 }
 
-/* ===== BUTTONS: .btn.btn-mini ===== */
-.corp-well .btn.btn-mini {
-    background-color: #2a2a2a !important;
-    color: #a0d4ff !important;
-    border: 1px solid #444 !important;
-    padding: 4px 10px !important;
-    font-size: 12px !important;
-    border-radius: 4px !important;
-    transition: all 0.2s ease !important;
-}
-
-.corp-well .btn.btn-mini:hover {
-    background-color: #333 !important;
-    color: #ffffff !important;
-    border-color: #555 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
-}
-
-.corp-well .btn.btn-mini .fa {
-    color: #a0d4ff !important;
-}
-
-.corp-well .btn.btn-mini:hover .fa {
-    color: #ffffff !important;
-}
 
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
