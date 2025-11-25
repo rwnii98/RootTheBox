@@ -955,56 +955,107 @@ h2, h4 {
     background-color: #3a3a3a
 }
 /* ===== MVP SCOREBOARD — DARK MODE ===== */
-.well.span3 {
-    background-color: #1e1e1e !important;
-    border: 1px solid #333 !important;
-    border-radius: 10px !important;
-    padding: 20px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    color: #e0e0e0 !important;
+/* Dark Mode Theme for MVP Scoreboard */
+:root {
+  --bg-surface: #1e1e2e;
+  --bg-card: #252536;
+  --border: #3a3a4a;
+  --text-primary: #e6e6f0;
+  --text-secondary: #a9a9c2;
+  --text-muted: #7f829d;
+  --accent: #89b4fa;
+  --mvp-highlight: #f9e2af;
+  --success: #a6e3a1;
+  --hover-bg: #2c2c3f;
+  --header-bg: #313244;
 }
 
-.well.span3 table#scoreboard_mvp {
-    color: #e0e0e0 !important;
-}
+/* Dark mode only (if OS prefers dark) — optional */
+/* @media (prefers-color-scheme: dark) { */
+  .well.span3 {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    max-width: 320px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--text-primary);
+  }
 
-/* Table header */
-.well.span3 #scoreboard_mvp thead th {
-    background-color: #2a2a2a !important;
-    color: #f0f0f0 !important;
-    font-weight: 600 !important;
-    padding: 10px 8px !important;
-    border-bottom: 2px solid #444 !important;
-}
+  /* Table reset & base */
+  #scoreboard_mvp {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
 
-/* Striped rows — override Bootstrap .table-striped */
-.well.span3 #scoreboard_mvp tbody tr:nth-child(odd) > td,
-.well.span3 #scoreboard_mvp tbody tr:nth-child(odd) > th {
-    background-color: #1e1e1e !important;
-}
+  /* Override inline padding-top */
+  #scoreboard_mvp tbody tr[style*="padding-top"] {
+    padding-top: 0 !important;
+  }
 
-.well.span3 #scoreboard_mvp tbody tr:nth-child(even) > td,
-.well.span3 #scoreboard_mvp tbody tr:nth-child(even) > th {
-    background-color: #252525 !important;
-}
+  /* Header */
+  #scoreboard_mvp thead th {
+    background-color: var(--header-bg);
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left !important;
+    padding: 10px 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
 
-/* Hover effect */
-.well.span3 #scoreboard_mvp tbody tr:hover > td,
-.well.span3 #scoreboard_mvp tbody tr:hover > th {
-    background-color: #333 !important;
-}
+  #scoreboard_mvp thead th:last-child {
+    text-align: center !important;
+  }
 
-/* MVP name & points text */
-.well.span3 #scoreboard_mvp tbody td {
-    color: #e0e0e0 !important;
-    padding: 8px 10px !important;
-}
+  /* Body rows */
+  #scoreboard_mvp tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
 
-/* Points column (highlighted) */
-.well.span3 #scoreboard_mvp .summarycolumn {
-    color: #a0d4ff !important;
-    font-weight: bold !important;
-}
+  #scoreboard_mvp tbody tr:nth-child(even) {
+    background-color: rgba(45, 45, 65, 0.3);
+  }
+
+  #scoreboard_mvp tbody tr:hover {
+    background-color: var(--hover-bg);
+  }
+
+  /* Points column — enforce clean styling */
+  #scoreboard_mvp .summarycolumn,
+  #scoreboard_mvp td:last-child {
+    text-align: center !important;
+    width: 80px !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    color: var(--accent) !important;
+    white-space: nowrap;
+  }
+
+  /* MVP badge — gold highlight for #1 */
+  #scoreboard_mvp tbody tr:first-child td:first-child {
+    color: var(--mvp-highlight) !important;
+    font-weight: 600;
+  }
+  #scoreboard_mvp tbody tr:first-child td:first-child::before {
+    content: "🏆 ";
+    font-weight: bold;
+  }
+
+  /* Top 3 — optional bronze/silver/gold */
+  #scoreboard_mvp tbody tr:nth-child(2) td:first-child::before { content: "🥈 "; }
+  #scoreboard_mvp tbody tr:nth-child(3) td:first-child::before { content: "🥉 "; }
+  #scoreboard_mvp tbody tr:nth-child(2) td:first-child { color: #c6a49a !important; }
+  #scoreboard_mvp tbody tr:nth-child(3) td:first-child { color: #f8bd7f !important; }
+
+  
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
 .navbar-inner > div.footernav,
