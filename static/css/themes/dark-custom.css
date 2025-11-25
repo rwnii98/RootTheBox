@@ -967,9 +967,6 @@ h2, h4 {
 
 .control-group {
     padding: 20px;
-    border-radius: 12px;
-    background: #1e1e1e;
-    border: 1px solid #333;
 }
 
 .well #accordion {
@@ -1255,8 +1252,11 @@ h2, h4 {
 .corp-well .fa-lock {
     color: #ffcc00 !important;
 }
-
-
+/* ======= configuration page (Dark Mode) ======= */
+/* Make "Enable" / "Disable" text black (override Bootstrap button text color) */
+#hints-taken-button .btn {
+    color: #000000 !important; /* black text */
+}
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
 .navbar-inner > div.footernav,
