@@ -1253,9 +1253,33 @@ h2, h4 {
     color: #ffcc00 !important;
 }
 /* ======= configuration page (Dark Mode) ======= */
-/* Make "Enable" / "Disable" text black (override Bootstrap button text color) */
-#hints-taken-button .btn {
-    color: #000000 !important; /* black text */
+/* 🔹 Popover: Dark background + black text for hint toggle popover */
+#hints-taken-button + .popover,
+#hints-taken-button ~ .popover {
+    /* Optional: keep dark background, but with black text */
+    background-color: #f8f9fa !important; /* light gray bg for readability */
+    border-color: #ccc !important;
+    color: #000 !important;
+    max-width: 350px !important;
+}
+
+/* Popover body text — this is where your data-content appears */
+#hints-taken-button + .popover .popover-body,
+#hints-taken-button + .popover .popover-content,
+#hints-taken-button ~ .popover .popover-body,
+#hints-taken-button ~ .popover .popover-content {
+    color: #000000 !important;     /* pure black */
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+/* Popover title (if any) */
+#hints-taken-button + .popover .popover-header,
+#hints-taken-button ~ .popover .popover-title {
+    background-color: #eee !important;
+    border-bottom: 1px solid #ddd !important;
+    color: #000 !important;
+    font-weight: 600 !important;
 }
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
