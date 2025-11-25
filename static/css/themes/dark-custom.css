@@ -1016,22 +1016,27 @@ h2, h4 {
     border: 1px solid #333;
     border-radius: 10px;
 }
-/* 🔹 Dark-mode hover for flag table (RTL) */
-table.table.table-hover[style*="rtl"] tbody.flagbody > tr:hover,
-table.table.table-hover[style*="rtl"] tbody.flagbody > tr:hover + tr {
-    background-color: #2a2a2a !important;
-    transition: background-color 0.15s ease;
+/* Dark background for all flagbody rows */
+tbody.flagbody tr {
+    background-color: #1a1a1a !important;
+    color: #e6e6e6 !important;
 }
 
-/* slightly lighter for description rows (2nd row in pair) */
-table.table.table-hover[style*="rtl"] tbody.flagbody > tr:hover + tr {
-    background-color: #252525 !important;
+/* Description row (usually second row inside tbody.flagbody) */
+tbody.flagbody tr:nth-child(2) {
+    background-color: #202020 !important;
 }
 
-/* Ensure text remains readable on hover */
-table.table.table-hover[style*="rtl"] tbody.flagbody tr:hover td,
-table.table.table-hover[style*="rtl"] tbody.flagbody tr:hover + tr td {
-    color: #e0e0e0 !important;
+/* Fix hover: remove white background */
+.table-hover tbody.flagbody tr:hover {
+    background-color: #2b2b2b !important;
+    color: #ffffff !important;
+}
+
+/* Make sure no inline backgrounds override */
+tbody.flagbody tr td[style],
+tbody.flagbody tr[style] {
+    background-color: inherit !important;
 }
 /* ===== SCOREBOARD SECTION — DARK MODE ===== */
 .well.span7.offset1 {
