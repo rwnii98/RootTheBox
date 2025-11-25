@@ -6,39 +6,6 @@ body {
     color: #e0e0e0; /* light gray text */
     background-color: #121212; /* near-black background */
 }
-/* Dark mode table */
-.table {
-    background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
-}
-
-.table thead th {
-    background-color: #2a2a2a !important;
-    color: #fff !important;
-    border-color: #444 !important;
-}
-
-.table tbody tr {
-    background-color: #1e1e1e !important;
-    border-color: #333 !important;
-}
-
-/* Fix hover — no white flash */
-.table-hover tbody tr:hover {
-    background-color: #333 !important;
-    color: #fff !important;
-}
-
-/* Caption */
-table caption h4 {
-    color: #fff !important;
-}
-
-/* Description rows */
-.descriptioncol {
-    background-color: #252525 !important;
-    color: #ddd !important;
-}
 
 /* =======Main navbar and page========== */
 .navbar.navbar-fixed-top {
