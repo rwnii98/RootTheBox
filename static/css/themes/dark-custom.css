@@ -1090,9 +1090,6 @@ h2, h4 {
     border-radius: 4px;
     text-shadow: none;
 }
-.well.span7.offset1 .btn.btn-mini:hover {
-    background-color: #3a3a3a
-}
 /* ===== MVP SCOREBOARD — DARK MODE ===== */
 .well.span3 {
     background-color: #1e1e1e !important;
@@ -1251,6 +1248,138 @@ h2, h4 {
 /* Locked flag icon */
 .corp-well .fa-lock {
     color: #ffcc00 !important;
+}
+/* ===== FLAG DETAILS MODAL — DARK MODE ===== */
+#details-flag-modal.modal {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    color: #e0e0e0 !important;
+}
+
+/* Modal header */
+#details-flag-modal .modal-header {
+    background-color: #252525 !important;
+    border-bottom: 1px solid #444 !important;
+    padding: 16px 20px 12px !important;
+}
+
+#details-flag-modal .close {
+    color: #aaa !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+#details-flag-modal .close:hover {
+    color: #ff6666 !important;
+}
+
+#details-flag-modal h3 {
+    color: #a0d4ff !important;
+    margin: 0 !important;
+}
+#details-flag-modal h3 i {
+    color: #a0d4ff !important;
+}
+#details-flag-modal #flag_value {
+    color: #77dd77 !important; /* light green for points */
+    font-weight: 600 !important;
+}
+
+/* Flag info table */
+#details-flag-modal .table {
+    background: transparent !important;
+    color: #e0e0e0 !important;
+    margin-bottom: 12px !important;
+}
+
+#details-flag-modal .table tbody tr td {
+    border: none !important;
+    padding: 4px 0 !important;
+    vertical-align: top !important;
+}
+
+#details-flag-modal .shortcolumn,
+#details-flag-modal .descriptioncol {
+    color: #e0e0e0 !important;
+}
+
+#details-flag-modal #details_flag_name,
+#details-flag-modal #details_flag_description,
+#details-flag-modal #details_flag_token {
+    color: #e0e0e0 !important;
+}
+
+/* Stats row (Attempts/Captures/Hints) */
+#details-flag-modal .table + .table {
+    margin-top: 10px !important;
+    background: #2a2a2a !important;
+    border-radius: 6px !important;
+    padding: 6px 0 !important;
+}
+#details-flag-modal .table + .table td {
+    border: none !important;
+    background: transparent !important;
+    padding: 6px 12px !important;
+    color: #e0e0e0 !important;
+}
+#details-flag-modal .fa-times { color: #ff6666 !important; }
+#details-flag-modal .fa-check { color: #77dd77 !important; }
+#details-flag-modal .fa-medkit { color: #ffcc00 !important; }
+
+/* HR separator */
+#details-flag-modal hr {
+    border-top: 1px solid #444 !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+
+/* Modal body sections */
+#details-flag-modal .modal-body h4 {
+    color: #e0e0e0 !important;
+    margin-top: 20px !important;
+    margin-bottom: 8px !important;
+}
+#details-flag-modal .modal-body h4 i {
+    color: inherit !important;
+}
+
+/* Inner wells */
+#details-flag-modal .well {
+    background-color: #252525 !important;
+    border: 1px solid #3a3a3a !important;
+    padding: 12px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Inner tables (attempts/captures/hints) */
+#details-flag-modal .table.table-striped {
+    background: transparent !important;
+    margin-bottom: 0 !important;
+}
+
+#details-flag-modal .table-striped tbody tr:nth-child(odd) > td {
+    background-color: #1e1e1e !important;
+}
+#details-flag-modal .table-striped tbody tr:nth-child(even) > td {
+    background-color: #252525 !important;
+}
+#details-flag-modal .table-striped tbody tr:hover > td {
+    background-color: #333 !important;
+}
+
+#details-flag-modal .table-striped td,
+#details-flag-modal .table-striped th {
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+/* Empty state ("None") */
+#details-flag-modal #details-attempts:empty::before,
+#details-flag-modal #details-captures:empty::before,
+#details-flag-modal #details-hints:empty::before {
+    content: "— No records —";
+    color: #777 !important;
+    font-style: italic;
 }
 /* ======= configuration page (Dark Mode) ======= */
 /* 🔹 Make ALL popover text black — title + body */
