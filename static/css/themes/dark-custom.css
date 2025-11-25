@@ -1024,6 +1024,54 @@ h2, h4 {
     background-color: #262626 !important;
 }
 
+/* submit flag form- dark mode */
+#capture-text-flag-modal {
+    background-color: #1b1b1b !important;
+    color: #eee !important;
+}
+
+/* Modal header */
+#capture-text-flag-modal .modal-header {
+    background-color: #222 !important;
+    border-bottom: 1px solid #444 !important;
+    color: #fff !important;
+}
+
+/* Modal body */
+#capture-text-flag-modal .modal-body {
+    background-color: #1b1b1b !important;
+    color: #ddd !important;
+}
+
+/* Form labels */
+#capture-text-flag-modal label.control-label {
+    color: #fff !important;
+}
+
+/* Input field */
+#capture-text-flag-modal input[type="text"],
+#capture-text-flag-modal input[type="text"]:focus {
+    background-color: #2a2a2a !important;
+    color: #eee !important;
+    border: 1px solid #555 !important;
+}
+
+/* Modal footer (without touching buttons) */
+#capture-text-flag-modal .modal-footer {
+    background-color: #222 !important;
+    border-top: 1px solid #444 !important;
+}
+
+/* Close button "×" but not other buttons */
+#capture-text-flag-modal .modal-header .close {
+    color: #fff !important;
+    opacity: 0.7;
+}
+#capture-text-flag-modal .modal-header .close:hover {
+    opacity: 1;
+}
+
+
 /* ===== SCOREBOARD SECTION — DARK MODE ===== */
 .well.span7.offset1 {
     background-color: #1e1e1e !important;
