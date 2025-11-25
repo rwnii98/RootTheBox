@@ -885,6 +885,41 @@ h2, h4 {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: background 0.2s, transform 0.1s;
 }
+/* Dark Mode for .table.table-striped (e.g., source code table) */
+.table.table-striped {
+    color: #e0e0e0 !important;
+    background-color: transparent !important;
+}
+
+.table.table-striped thead th {
+    background-color: #2a2a2a !important;
+    color: #f0f0f0 !important;
+    font-weight: 600 !important;
+    padding: 10px 12px !important;
+    border-bottom: 2px solid #444 !important;
+    text-align: left !important;
+}
+
+/* Dark striped rows */
+.table.table-striped tbody tr:nth-child(odd) > td {
+    background-color: #1e1e1e !important;
+}
+
+.table.table-striped tbody tr:nth-child(even) > td {
+    background-color: #252525 !important;
+}
+
+/* Hover effect */
+.table.table-striped tbody tr:hover > td {
+    background-color: #333 !important;
+}
+
+/* Ensure all cell text is white/legible */
+.table.table-striped td,
+.table.table-striped th {
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
 
 /* ======= File sharing page ======= */
 .control-group select,
