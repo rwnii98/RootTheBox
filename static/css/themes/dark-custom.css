@@ -527,7 +527,7 @@ legend i.fa {
 }
 
 #navWrapper li a:hover {
-    background-color: #0062cc;
+    background-color: #0d47a1;
     color: #fff;
     text-decoration: none;
 }
@@ -1159,7 +1159,7 @@ div.navbar-inner.footernav a,
 
 div.navbar-inner.footernav a:hover,
 .footernav a:hover {
-    color: #a0d4ff !important;
+    color: #0d47a1 !important;
     text-decoration: underline !important;
 }
 
