@@ -753,6 +753,10 @@ legend i.fa {
 }
 
 /* ======= charts history board ======= */
+.container {
+  margin-right: auto;
+  margin-left: 2px;
+}
 .container a i,
 .container li,
 .container select,
