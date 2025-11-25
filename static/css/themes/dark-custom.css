@@ -962,8 +962,8 @@ h2, h4 {
     padding: 20px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     color: #e0e0e0 !important;
-    /* 👇 Scrollable container — fits any number of rows */
-    max-height: 420px !important;
+    /* 👇 Slightly taller scrollable container */
+    max-height: 480px !important;
     overflow-y: auto !important;
     /* Optional: improve scrollbar appearance (WebKit) */
     scrollbar-width: thin; /* Firefox */
@@ -986,7 +986,6 @@ h2, h4 {
 
 .well.span3 table#scoreboard_mvp {
     color: #e0e0e0 !important;
-    /* Ensure table doesn’t add extra margin that pushes scroll */
     margin: 0 !important;
 }
 
