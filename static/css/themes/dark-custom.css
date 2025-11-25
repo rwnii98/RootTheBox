@@ -1056,7 +1056,7 @@ h2, h4 {
     border: 1px solid #555 !important;
 }
 
-/* Modal footer (without touching buttons) */
+/* Modal footer  */
 #capture-text-flag-modal .modal-footer {
     background-color: #222 !important;
     border-top: 1px solid #444 !important;
@@ -1069,6 +1069,9 @@ h2, h4 {
 }
 #capture-text-flag-modal .modal-header .close:hover {
     opacity: 1;
+}
+.fa-flag {
+    color: #000000 !important;  /* pure black */
 }
 
 
