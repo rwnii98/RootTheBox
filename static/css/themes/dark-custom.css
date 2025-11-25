@@ -1397,6 +1397,114 @@ h2, h4 {
 .popover .popover-body * {
     color: #000000 !important;
 }
+/* ===== Black market — DARK MODE ===== */
+#edit-market-item-modal.modal {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    color: #e0e0e0 !important;
+}
+
+/* Modal header */
+#edit-market-item-modal .modal-header {
+    background-color: #252525 !important;
+    border-bottom: 1px solid #444 !important;
+    padding: 16px 20px !important;
+}
+
+#edit-market-item-modal .modal-header .close {
+    color: #aaa !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+#edit-market-item-modal .modal-header .close:hover {
+    color: #ff6666 !important;
+}
+
+#edit-market-item-modal .modal-header h3 {
+    color: #a0d4ff !important;
+    margin: 0 !important;
+    font-weight: 600 !important;
+}
+#edit-market-item-modal .modal-header h3 i {
+    color: #a0d4ff !important;
+}
+
+/* Modal body */
+#edit-market-item-modal .modal-body {
+    padding: 20px !important;
+    background-color: #1e1e1e !important;
+}
+
+#edit-market-item-modal .form-horizontal {
+    margin-bottom: 0 !important;
+}
+
+/* Form labels */
+#edit-market-item-modal .control-label {
+    color: #e0e0e0 !important;
+    font-weight: 500 !important;
+    text-align: right !important;
+}
+
+/* Form inputs */
+#edit-market-item-modal .controls input[type="text"],
+#edit-market-item-modal .controls input[type="number"] {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    outline: none !important;
+}
+
+#edit-market-item-modal .controls input[type="text"]:focus,
+#edit-market-item-modal .controls input[type="number"]:focus {
+    border-color: #555 !important;
+    box-shadow: 0 0 0 2px rgba(160, 212, 255, 0.2) !important;
+}
+
+/* Modal footer */
+#edit-market-item-modal .modal-footer {
+    background-color: #252525 !important;
+    border-top: 1px solid #444 !important;
+    padding: 16px 20px !important;
+    text-align: right !important;
+}
+
+/* Buttons */
+#edit-market-item-modal .btn {
+    color: #e0e0e0 !important;
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    padding: 6px 16px !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+#edit-market-item-modal .btn:hover {
+    background-color: #333 !important;
+    border-color: #555 !important;
+}
+
+#edit-market-item-modal .btn.btn-primary {
+    background-color: #0d6efd !important;
+    border-color: #0b5ed7 !important;
+    color: #ffffff !important;
+}
+
+#edit-market-item-modal .btn.btn-primary:hover {
+    background-color: #0b5ed7 !important;
+    border-color: #0a56be !important;
+}
+
+#edit-market-item-modal .btn .fa {
+    margin-right: 4px !important;
+}
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
 .navbar-inner > div.footernav,
