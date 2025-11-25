@@ -962,12 +962,32 @@ h2, h4 {
     padding: 20px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     color: #e0e0e0 !important;
-    /* 👇 Ensures container fits all 10 rows + header + padding */
-    min-height: 420px !important;
+    /* 👇 Scrollable container — fits any number of rows */
+    max-height: 420px !important;
+    overflow-y: auto !important;
+    /* Optional: improve scrollbar appearance (WebKit) */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #444 #1e1e1e; /* thumb / track */
+}
+/* WebKit browsers (Chrome, Safari) */
+.well.span3::-webkit-scrollbar {
+    width: 8px;
+}
+.well.span3::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+.well.span3::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+.well.span3::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .well.span3 table#scoreboard_mvp {
     color: #e0e0e0 !important;
+    /* Ensure table doesn’t add extra margin that pushes scroll */
+    margin: 0 !important;
 }
 
 /* Table header */
