@@ -1016,6 +1016,23 @@ h2, h4 {
     border: 1px solid #333;
     border-radius: 10px;
 }
+/* 🔹 Dark-mode hover for flag table (RTL) */
+table.table.table-hover[style*="rtl"] tbody.flagbody > tr:hover,
+table.table.table-hover[style*="rtl"] tbody.flagbody > tr:hover + tr {
+    background-color: #2a2a2a !important;
+    transition: background-color 0.15s ease;
+}
+
+/* slightly lighter for description rows (2nd row in pair) */
+table.table.table-hover[style*="rtl"] tbody.flagbody > tr:hover + tr {
+    background-color: #252525 !important;
+}
+
+/* Ensure text remains readable on hover */
+table.table.table-hover[style*="rtl"] tbody.flagbody tr:hover td,
+table.table.table-hover[style*="rtl"] tbody.flagbody tr:hover + tr td {
+    color: #e0e0e0 !important;
+}
 /* ===== SCOREBOARD SECTION — DARK MODE ===== */
 .well.span7.offset1 {
     background-color: #1e1e1e !important;
