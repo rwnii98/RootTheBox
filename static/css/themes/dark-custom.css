@@ -970,9 +970,6 @@ h2, h4 {
 }
 
 /* ======= Target management page ======= */
-.corp-well {
-    /* size unchanged */
-}
 .locked {
     background-color: #4a4848 !important; /* dark muted red */
 }
@@ -1132,6 +1129,120 @@ h2, h4 {
     color: #a0d4ff !important;
     font-weight: bold !important;
 }
+/* ===== Statistics page — DARK MODE ===== */
+/* ===== OUTER CONTAINER — corp-well ===== */
+.corp-well {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    border-radius: 10px !important;
+    padding: 24px !important;
+    color: #e0e0e0 !important;
+    min-height: 1800px !important; /* ensures all inner content fits */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.corp-well h2 {
+    color: #a0d4ff !important;
+    margin-bottom: 16px !important;
+}
+
+/* ===== INNER WELLS (challenge boxes) ===== */
+.corp-well .well {
+    background-color: #252525 !important;
+    border: 1px solid #444 !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.corp-well .well h4 {
+    color: #e0e0e0 !important;
+    margin-bottom: 12px !important;
+}
+
+.corp-well hr {
+    border-top: 1px solid #444 !important;
+    margin: 12px 0 !important;
+}
+
+/* ===== TABLES — dark mode for .table & .table-striped ===== */
+.corp-well .table {
+    color: #e0e0e0 !important;
+    background: transparent !important;
+}
+
+.corp-well .table thead th {
+    background-color: #2a2a2a !important;
+    color: #f0f0f0 !important;
+    font-weight: 600 !important;
+    padding: 10px 8px !important;
+    border-bottom: 2px solid #444 !important;
+    text-align: left !important;
+}
+
+.corp-well .table thead th.shortcolumn {
+    text-align: center !important;
+}
+
+/* Dark striped rows */
+.corp-well .table-striped tbody tr:nth-child(odd) > td {
+    background-color: #1e1e1e !important;
+}
+
+.corp-well .table-striped tbody tr:nth-child(even) > td {
+    background-color: #252525 !important;
+}
+
+/* Hover effect */
+.corp-well .table tbody tr:hover > td {
+    background-color: #333 !important;
+}
+
+/* Ensure all text is legible */
+.corp-well td,
+.corp-well th {
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+/* Shortcolumn alignment & styling */
+.corp-well .shortcolumn {
+    text-align: center !important;
+    color: #e0e0e0 !important;
+}
+
+/* Locked flag icon */
+.corp-well .fa-lock {
+    color: #ffcc00 !important;
+}
+
+/* ===== BUTTONS: .btn.btn-mini ===== */
+.corp-well .btn.btn-mini {
+    background-color: #2a2a2a !important;
+    color: #a0d4ff !important;
+    border: 1px solid #444 !important;
+    padding: 4px 10px !important;
+    font-size: 12px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.corp-well .btn.btn-mini:hover {
+    background-color: #333 !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.corp-well .btn.btn-mini .fa {
+    color: #a0d4ff !important;
+}
+
+.corp-well .btn.btn-mini:hover .fa {
+    color: #ffffff !important;
+}
+
 /* ======= Footer (Dark Mode) ======= */
 div.navbar-inner.footernav,
 .navbar-inner > div.footernav,
